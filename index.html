@@ -2407,6 +2407,14 @@
     color-scheme:dark;
   }
   html,body{ height:100%; }
+  /* ---- inside the Dashboard (Trip mode) ---- */
+  html.embedded{ --black:#090A0B; --steel:#0F1113; --plate:#111416; --seam:#1C2023; --text:#BEC3BB; --text-dim:#737A74; }
+  html.embedded .lab{ grid-template-columns:clamp(400px, 25vw, 520px) minmax(0, 1fr); gap:12px; background:#090A0B; }
+  html.embedded .rack{ grid-column:1; grid-row:1; border:1px solid #1C2023; border-radius:3px; }
+  html.embedded .stage{ grid-column:2; grid-row:1; border:1px solid #1C2023; border-radius:3px; }
+  html.embedded .brand, html.embedded .player-row, html.embedded .player-now, html.embedded .live-extra, html.embedded .live-note{ display:none !important; }
+  html.embedded .player{ padding-top:14px; }
+  html.embedded .bg-list{ grid-template-columns:1fr; }   /* one background per row: the panel is narrower here */
   body{ background:var(--black); color:var(--text); font-family:var(--body); font-size:14px; }
   *{ box-sizing:border-box; }
 
@@ -2622,6 +2630,11 @@
   .vliq-pic-txt{ flex:1 1 160px; font-family:var(--body); font-size:.8rem; color:var(--text); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .vliq-pic .pill[hidden]{ display:none; }
   .bg-swatch--vriver{ background:radial-gradient(ellipse 14% 9% at 20% 40%, rgba(255,80,200,.9), transparent 70%), radial-gradient(ellipse 12% 8% at 82% 46%, rgba(140,90,255,.9), transparent 70%), linear-gradient(90deg, transparent 18%, rgba(255,255,255,.12) 19% 20%, transparent 21% 79%, rgba(255,255,255,.12) 80% 81%, transparent 82%), radial-gradient(ellipse 30% 70% at 50% 100%, rgba(0,229,255,.75), rgba(0,120,200,.25) 60%, transparent 80%), repeating-linear-gradient(90deg, rgba(0,229,255,.25) 0 1px, transparent 1px 4px), #02040c; }
+  .bg-swatch--pinf{ background:radial-gradient(circle, #ff3fa0 0 1.6px, rgba(255,63,160,.35) 2.6px, transparent 3.6px) 0 0 / 9px 9px, radial-gradient(circle, #30d8ff 0 1.6px, transparent 3px) 4.5px 4.5px / 9px 9px, linear-gradient(180deg, #120624 0%, #2b0d3e 55%, #4a1440 100%); }
+  .bg-swatch--ridge{ background:repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,.55) 3px 4px), radial-gradient(ellipse 22% 60% at 30% 100%, #ffffff 0 18%, transparent 60%), radial-gradient(ellipse 18% 45% at 62% 100%, #f2ffe0 0 15%, transparent 62%), linear-gradient(90deg, #ff3b1f 0%, #ffb21f 25%, #8cf5ff 45%, #b7ff4a 62%, #2f7bff 82%, #ff2d6a 100%); background-blend-mode:normal, screen, screen, normal; -webkit-mask:linear-gradient(0deg, #000 0 55%, transparent 90%); mask:linear-gradient(0deg, #000 0 55%, transparent 90%); background-color:#111; }
+  .bg-swatch--shz{ background:repeating-linear-gradient(90deg, transparent 0 2px, rgba(0,0,0,.6) 2px 3px) top / 100% 55% no-repeat, linear-gradient(0deg, transparent 45%, rgba(255,210,90,.0) 45%), radial-gradient(ellipse 18% 40% at 50% 55%, #7ff4ff 0 35%, transparent 70%), radial-gradient(ellipse 22% 30% at 18% 55%, #ffb03a 0 30%, transparent 70%), radial-gradient(ellipse 22% 30% at 82% 55%, #ff6fb0 0 30%, transparent 70%), repeating-linear-gradient(0deg, #1b3fa8 0 3px, #2b8f9a 3px 5px, #13205e 5px 7px) bottom / 100% 45% no-repeat, linear-gradient(180deg, #050816 0%, #0d1a4a 55%); }
+  .bg-swatch--sand{ background:linear-gradient(180deg, #0a0a14 0 30%, transparent 30%), linear-gradient(0deg, #c9a46a 0 14%, #e0566b 14% 30%, #f2b33d 30% 46%, #3fa7c9 46% 62%, #8d5ad8 62% 78%, transparent 78%); -webkit-mask:radial-gradient(ellipse 60% 85% at 35% 100%, #000 60%, transparent 61%), radial-gradient(ellipse 30% 55% at 80% 100%, #000 60%, transparent 61%), linear-gradient(#000 0 30%, transparent 30%); mask:radial-gradient(ellipse 60% 85% at 35% 100%, #000 60%, transparent 61%), radial-gradient(ellipse 30% 55% at 80% 100%, #000 60%, transparent 61%), linear-gradient(#000 0 30%, transparent 30%); background-color:#0a0a14; }
+  .bg-swatch--mypic{ background:linear-gradient(160deg, transparent 0 58%, #3a6b3a 58% 100%), linear-gradient(200deg, transparent 0 62%, #2f5a8a 62% 100%), radial-gradient(circle at 70% 30%, #ffd75a 0 12%, transparent 13%), linear-gradient(180deg, #6fb4ff 0%, #bfe1ff 70%); outline:2px solid #ddd; outline-offset:-5px; }
   .bg-swatch--mobius{ background:radial-gradient(circle at 30% 60%, #000 0 10%, transparent 11%), radial-gradient(circle at 72% 40%, #000 0 7%, transparent 8%), repeating-conic-gradient(from 20deg at 30% 60%, #ff5a7a 0 8deg, #111 8deg 10deg, #ffc04a 10deg 18deg, #111 18deg 20deg, #4ad0ff 20deg 28deg, #111 28deg 30deg), #050505; }
   .bg-swatch--vliq{ background:linear-gradient(160deg, transparent 0 52%, rgba(255,255,255,.55) 55%, rgba(160,200,255,.25) 58%, transparent 63%), radial-gradient(circle at 35% 35%, rgba(255,255,255,.22), transparent 30%) 0 0/7px 7px, radial-gradient(circle, #3a3a3e 0 35%, #0b0b0d 48%) 0 0/7px 7px, #050506; }
   .bg-swatch--hcube{ background:linear-gradient(135deg, transparent 0 30%, rgba(255,255,255,.25) 31%, transparent 33%), repeating-linear-gradient(0deg, transparent 0 9%, rgba(120,200,255,.35) 10%, transparent 12%), repeating-linear-gradient(90deg, transparent 0 9%, rgba(255,120,220,.3) 10%, transparent 12%), radial-gradient(circle at 50% 55%, rgba(170,140,255,.55), rgba(40,60,140,.35) 45%, transparent 70%), #02030a; }
@@ -2722,13 +2735,18 @@
   }
 </style>
 
+<script>
+  /* Opened inside the Dashboard (Trip mode)? Then the Dashboard's Player is the music, and the page takes the Dashboard's look */
+  window.TRIP_EMBED = /[?&]embed=1(&|$)/.test(location.search) && window.parent !== window;
+  if (window.TRIP_EMBED) document.documentElement.classList.add('embedded');
+</script>
 <div class="lab">
   <div class="stage" id="stage">
     <canvas id="c" aria-label="Trip FX Lab visualiser"></canvas>
     <div class="stage-tag"><span class="stage-brand">Trip FX Lab</span><span class="stage-bg" id="bgName">Dark City</span></div>
     <div class="idle" id="idle">
       <p class="idle-name">Trip FX Lab</p>
-      <label class="idle-cta" for="fileIn">Choose a track to start</label>
+      <label class="idle-cta" for="fileIn" id="idleCta">Choose a track to start</label>
     </div>
     <div class="section-chip" id="chip">Listening</div>
     <button class="stage-btn" id="fsBtn" type="button">Full screen</button>
@@ -2774,6 +2792,16 @@
         <label class="file-btn"><input type="file" id="vliqPicIn" accept="image/*"><span class="pill">Use my picture</span></label>
         <button class="pill" type="button" id="vliqPicClear" hidden>Back to pins</button>
       </div>
+      <div class="vliq-pic" id="ridgePic" hidden>
+        <span class="vliq-pic-txt"><b>Behind the ridges:</b> <span id="ridgePicName">Black</span></span>
+        <label class="file-btn"><input type="file" id="ridgePicIn" accept="image/*"><span class="pill">Use my picture</span></label>
+        <button class="pill" type="button" id="ridgePicClear" hidden>Back to black</button>
+      </div>
+      <div class="vliq-pic" id="mypicPic" hidden>
+        <span class="vliq-pic-txt"><b>Your picture:</b> <span id="mypicName">None yet: choose one</span></span>
+        <label class="file-btn"><input type="file" id="mypicIn" accept="image/*"><span class="pill">Choose picture</span></label>
+        <button class="pill" type="button" id="mypicClear" hidden>Remove</button>
+      </div>
       <div class="bg-list" role="group" aria-label="Background">
         <button type="button" class="bg-card" data-bg="amberc" aria-pressed="false"><span class="bg-swatch bg-swatch--amberc" aria-hidden="true"></span><span class="bg-txt"><b>Amber Core</b><small>A folding amber orb inside a floating shell of cyan dust</small></span></button>
         <button type="button" class="bg-card" data-bg="tend" aria-pressed="false"><span class="bg-swatch bg-swatch--tend" aria-hidden="true"></span><span class="bg-txt"><b>Bioluminescent Tendrils</b><small>A shoal of glowing jellyfish drifting through the deep, bells pulsing as they swim</small></span></button>
@@ -2802,6 +2830,7 @@
         <button type="button" class="bg-card" data-bg="milk" aria-pressed="false"><span class="bg-swatch bg-swatch--milk" aria-hidden="true"></span><span class="bg-txt"><b>Milkdrop Feedback</b><small>The song's waveform spiralling into an endless vortex</small></span></button>
         <button type="button" class="bg-card" data-bg="mobius" aria-pressed="false"><span class="bg-swatch bg-swatch--mobius" aria-hidden="true"></span><span class="bg-txt"><b>Möbius Cells</b><small>Rounded colour tiles wrapped round two turning spirals, pumping with the bass and morphing to new shapes</small></span></button>
         <button type="button" class="bg-card" data-bg="msphere" aria-pressed="false"><span class="bg-swatch bg-swatch--msphere" aria-hidden="true"></span><span class="bg-txt"><b>Morphing Sphere</b><small>A glowing wireframe globe that writhes and shudders with the beat</small></span></button>
+        <button type="button" class="bg-card" data-bg="mypic" aria-pressed="false"><span class="bg-swatch bg-swatch--mypic" aria-hidden="true"></span><span class="bg-txt"><b>My Picture</b><small>Your own picture as the background, for the effects to bring to life</small></span></button>
         <button type="button" class="bg-card" data-bg="neon" aria-pressed="false"><span class="bg-swatch bg-swatch--neon" aria-hidden="true"></span><span class="bg-txt"><b>Neon Kaleidoscope</b><small>Glowing neon rings folding into patterns</small></span></button>
         <button type="button" class="bg-card" data-bg="village" aria-pressed="false"><span class="bg-swatch bg-swatch--village" aria-hidden="true"></span><span class="bg-txt"><b>Neon Village</b><small>A low-poly cyberpunk village with drones and dragons, glowing on the kick</small></span></button>
         <button type="button" class="bg-card" data-bg="noxfire" aria-pressed="false"><span class="bg-swatch bg-swatch--noxfire" aria-hidden="true"></span><span class="bg-txt"><b>Nox Fire Vertex</b><small>Drifting through a swirling tunnel of volumetric flame, orange or blue</small></span></button>
@@ -2809,10 +2838,14 @@
         <button type="button" class="bg-card" data-bg="dish" aria-pressed="false"><span class="bg-swatch bg-swatch--dish" aria-hidden="true"></span><span class="bg-txt"><b>Parabolic Reflector</b><small>A raytraced mirror dish catching beams of light, the beat landing at its focus</small></span></button>
         <button type="button" class="bg-card" data-bg="eflow" aria-pressed="false"><span class="bg-swatch bg-swatch--eflow" aria-hidden="true"></span><span class="bg-txt"><b>Particle Cloud</b><small>A sunflower cloud of glowing particles rippling into petals, pushed about by the beat</small></span></button>
         <button type="button" class="bg-card" data-bg="perlin" aria-pressed="false"><span class="bg-swatch bg-swatch--perlin" aria-hidden="true"></span><span class="bg-txt"><b>Perlin Noise</b><small>A molten ball churning with noise, surging on the kick</small></span></button>
+        <button type="button" class="bg-card" data-bg="pinf" aria-pressed="false"><span class="bg-swatch bg-swatch--pinf" aria-hidden="true"></span><span class="bg-txt"><b>Pin Field</b><small>An endless field of chrome pins with glowing heads, rising and rippling with every sound</small></span></button>
         <button type="button" class="bg-card" data-bg="pistil" aria-pressed="false"><span class="bg-swatch bg-swatch--pistil" aria-hidden="true"></span><span class="bg-txt"><b>Pistil</b><small>Spiralling red petals around a dark heart</small></span></button>
         <button type="button" class="bg-card" data-bg="radio" aria-pressed="false"><span class="bg-swatch bg-swatch--radio" aria-hidden="true"></span><span class="bg-txt"><b>Radio Storm</b><small>Lightning forking down through a field of glowing nodes, striking on the kick</small></span></button>
         <button type="button" class="bg-card" data-bg="sakura" aria-pressed="false"><span class="bg-swatch bg-swatch--sakura" aria-hidden="true"></span><span class="bg-txt"><b>Sakura Teleidoscope</b><small>Cherry blossom against a low sun, multiplied by mirrors, like a photo through a teleidoscope</small></span></button>
+        <button type="button" class="bg-card" data-bg="sand" aria-pressed="false"><span class="bg-swatch bg-swatch--sand" aria-hidden="true"></span><span class="bg-txt"><b>Sand Spectrum</b><small>Coloured sand poured into the shape of the music, laying it down in layers like a sand-art bottle</small></span></button>
         <button type="button" class="bg-card" data-bg="sea" aria-pressed="false"><span class="bg-swatch bg-swatch--sea" aria-hidden="true"></span><span class="bg-txt"><b>Seahorse Valley</b><small>Layered teal glass spirals with gold veins, slowly drifting and morphing</small></span></button>
+        <button type="button" class="bg-card" data-bg="ridge" aria-pressed="false"><span class="bg-swatch bg-swatch--ridge" aria-hidden="true"></span><span class="bg-txt"><b>Spectral Ridges</b><small>The music as a mountain range of fine glowing lines, the newest sound at the front</small></span></button>
+        <button type="button" class="bg-card" data-bg="shz" aria-pressed="false"><span class="bg-swatch bg-swatch--shz" aria-hidden="true"></span><span class="bg-txt"><b>Spectrum Horizon</b><small>A glossy tiled floor carrying the sound towards you from a skyline of glowing spectrum bars</small></span></button>
         <button type="button" class="bg-card" data-bg="mandala" aria-pressed="false"><span class="bg-swatch bg-swatch--mandala" aria-hidden="true"></span><span class="bg-txt"><b>Spectrum Mandala</b><small>Every ring blooms with its own slice of the music</small></span></button>
         <button type="button" class="bg-card" data-bg="sphere" aria-pressed="false"><span class="bg-swatch bg-swatch--sphere" aria-hidden="true"></span><span class="bg-txt"><b>Spherical Fractal</b><small>A folded sphere tumbling in colour</small></span></button>
         <button type="button" class="bg-card" data-bg="starb" aria-pressed="false"><span class="bg-swatch bg-swatch--starb" aria-hidden="true"></span><span class="bg-txt"><b>Starburst Aperture</b><small>Points of light through a camera iris, throwing rainbow diffraction spikes</small></span></button>
@@ -2851,61 +2884,66 @@
       <div class="fx-list">
         <label class="fx"><span class="fx-num">1</span><span class="fx-txt"><b>3D tilt</b><small>The picture leans like a screen seen at an angle and slowly rocks.</small></span><input type="checkbox" id="fx-tilt"><span class="sw"></span></label>
         <label class="fx"><span class="fx-num">2</span><span class="fx-txt"><b>Acid contour bands</b><small>Bright stripes flow over the surfaces like oil on water.</small></span><input type="checkbox" id="fx-bands"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">3</span><span class="fx-txt"><b>Beat stutter</b><small>The DJ beat-repeat for the picture: kicks catch a sliver of a beat and repeat it in time, punching in with a flash; drops rewind like tape.</small></span><input type="checkbox" id="fx-stutter"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">4</span><span class="fx-txt"><b>Blacklight poster</b><small>A psychedelic poster under UV: black velvet, six fluorescent day-glo inks, violet-glowing whites and a soft glow.</small></span><input type="checkbox" id="fx-blacklight"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">5</span><span class="fx-txt"><b>Blue Tint</b><small>Silent-film colouring: Azure and Nocturne moonlight tints and a Prussian blue tone, with an amber lamplight tint on drops.</small></span><input type="checkbox" id="fx-bluetint"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">6</span><span class="fx-txt"><b>Breathing zoom</b><small>The whole picture swells towards you on the bass and eases back.</small></span><input type="checkbox" id="fx-breathe"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">7</span><span class="fx-txt"><b>Cel shading</b><small>The cartoon look: flat bands of colour with bold ink outlines, bolder on the kick.</small></span><input type="checkbox" id="fx-cel"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">8</span><span class="fx-txt"><b>Changing symmetry</b><small>The kaleidoscope switches between 5, 6, 8 and 12 sections on drops and every 14 s.</small></span><input type="checkbox" id="fx-symmetry"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">9</span><span class="fx-txt"><b>Chromatic split</b><small>Red, green and blue jump apart on each kick and slide back together.</small></span><input type="checkbox" id="fx-split"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">10</span><span class="fx-txt"><b>Colour bleed</b><small>The picture goes black and white, and colour spreads out from the middle in inky rings on each kick.</small></span><input type="checkbox" id="fx-bleed"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">11</span><span class="fx-txt"><b>Colour by frequency</b><small>The middle glows with the bass, the ring around it with the mids, the outside with the hi-hats.</small></span><input type="checkbox" id="fx-spectrum"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">12</span><span class="fx-txt"><b>Colour cycle</b><small>Slowly cycles the picture through colour moods, each new one blooming out from the middle like ink.</small></span><input type="checkbox" id="fx-ccycle"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">13</span><span class="fx-txt"><b>Colour droplets</b><small>Drops of colour land on each kick, rippling the picture like ink in water.</small></span><input type="checkbox" id="fx-droplets"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">14</span><span class="fx-txt"><b>Comet streaks</b><small>Bright parts streak outward from the centre on each kick.</small></span><input type="checkbox" id="fx-streak"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">15</span><span class="fx-txt"><b>Counter-twist</b><small>The middle turns one way and the outside the other, weaving faster in busy parts.</small></span><input type="checkbox" id="fx-twist"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">16</span><span class="fx-txt"><b>Dichroic Mirror</b><small>Panes of dichroic glass drift across, passing one band of colour and reflecting its opposite, the colours sliding as they tilt.</small></span><input type="checkbox" id="fx-dichroic"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">17</span><span class="fx-txt"><b>Drops that land</b><small>When the bass returns after a break: colour flash, colour jump and a surge forward.</small></span><input type="checkbox" id="fx-drops"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">18</span><span class="fx-txt"><b>Glass orbs</b><small>Ray-traced glass balls and crystals float over the picture, bending it with rainbow fringes.</small></span><input type="checkbox" id="fx-glass"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">19</span><span class="fx-txt"><b>Gooch shading</b><small>Illustrator lighting: warm sides facing the lamp, cool sides away, with ink outlines that thicken on the kick.</small></span><input type="checkbox" id="fx-gooch"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">20</span><span class="fx-txt"><b>Infrared film</b><small>The false colours of infrared slide film: greens and cyans glow hot pink and red, reds turn green, with red halation.</small></span><input type="checkbox" id="fx-infrared"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">21</span><span class="fx-txt"><b>Isometric relief</b><small>The picture becomes a 3D landscape seen from above: bright parts rise, dark parts sink.</small></span><input type="checkbox" id="fx-iso"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">22</span><span class="fx-txt"><b>Journey mode</b><small>Moves on to the next background every 32 bars or on a big drop, melting one into the next.</small></span><input type="checkbox" id="fx-journey"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">23</span><span class="fx-txt"><b>Lambertian reflectance</b><small>Lights the picture like an embossed relief with a lamp circling the screen, stronger on the kick.</small></span><input type="checkbox" id="fx-lambert"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">24</span><span class="fx-txt"><b>Liquid wobble</b><small>The picture breathes and ripples like heat haze, harder on kicks.</small></span><input type="checkbox" id="fx-wobble"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">25</span><span class="fx-txt"><b>Living cells</b><small>A glowing membrane of bulging cells over the picture, pulsing with the beat.</small></span><input type="checkbox" id="fx-cells"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">26</span><span class="fx-txt"><b>Luminance</b><small>Bright parts give off light: a soft glow and beams travelling one way, slowly turning.</small></span><input type="checkbox" id="fx-lum"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">27</span><span class="fx-txt"><b>Marbling</b><small>The picture swirls through flowing fractal noise, like marbled paper or ink in water.</small></span><input type="checkbox" id="fx-marble"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">28</span><span class="fx-txt"><b>Matte Black</b><small>Everything coated in matte black, picked out only by a soft, velvety sheen along its curves and edges.</small></span><input type="checkbox" id="fx-matte"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">29</span><span class="fx-txt"><b>Melting drips</b><small>Bright colours run down the screen like wet paint, longer on heavy bass.</small></span><input type="checkbox" id="fx-melt"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">30</span><span class="fx-txt"><b>Melting trails</b><small>Each frame smears outward over the last. Trails stretch on the bass.</small></span><input type="checkbox" id="fx-trails"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">31</span><span class="fx-txt"><b>Morph</b><small>The picture flows through a swirl, pinch, fisheye and wave. The kick deepens it; a drop moves to the next shape.</small></span><input type="checkbox" id="fx-morph"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">32</span><span class="fx-txt"><b>Neon contours</b><small>The picture becomes a glowing neon line drawing; a drop flashes the full picture back.</small></span><input type="checkbox" id="fx-contours"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">33</span><span class="fx-txt"><b>Noir Ink</b><small>Graphic-novel noir: hard inked black and white with one flat, vivid colour kept, and white silhouettes on a drop.</small></span><input type="checkbox" id="fx-noir"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">34</span><span class="fx-txt"><b>Oblique projection</b><small>Bright shapes stand out towards you like 3D lettering while the picture stays face-on.</small></span><input type="checkbox" id="fx-oblique"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">35</span><span class="fx-txt"><b>Oren&ndash;Nayar reflectance</b><small>Lights the picture as a rough, matte relief like clay or the Moon, flattening when the lamp is high and standing out when it sinks low.</small></span><input type="checkbox" id="fx-oren"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">36</span><span class="fx-txt"><b>Pen &amp; ink</b><small>The picture drawn in ink: crisp outlines, stippled dots, hatching and cross-hatching, in black fineliner or blue biro.</small></span><input type="checkbox" id="fx-penink"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">37</span><span class="fx-txt"><b>Pencil shading</b><small>The picture redrawn in graphite on paper: cross-hatched shading, sketchy outlines and strokes that boil like an animated drawing.</small></span><input type="checkbox" id="fx-pencil"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">38</span><span class="fx-txt"><b>Quantum Spin</b><small>With Changing symmetry: the pattern crawls backwards while the picture races forwards, like wagon wheels on film.</small></span><input type="checkbox" id="fx-spin5"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">39</span><span class="fx-txt"><b>Retro 1-Bit</b><small>Pure black and white pixels, shaded with dither patterns like an old Mac.</small></span><input type="checkbox" id="fx-onebit"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">40</span><span class="fx-txt"><b>Retro CGA</b><small>Early-80s PC graphics: big pixels in just black, cyan, magenta and white.</small></span><input type="checkbox" id="fx-cga"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">41</span><span class="fx-txt"><b>Retro Commodore 64</b><small>Big pixels in the C64's muted 16 colours, with dither patterns.</small></span><input type="checkbox" id="fx-c64"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">42</span><span class="fx-txt"><b>Retro PICO-8</b><small>Big pixels in the bright 16-colour PICO-8 fantasy-console palette, with dither patterns.</small></span><input type="checkbox" id="fx-pico"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">43</span><span class="fx-txt"><b>Risograph</b><small>The 90s flyer print: three grainy spot inks on cream paper, slightly out of register.</small></span><input type="checkbox" id="fx-riso"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">44</span><span class="fx-txt"><b>Saturation pulse</b><small>Colour breathes with the music: muted in the quiet parts, flooding back on the bass, vivid on a drop.</small></span><input type="checkbox" id="fx-satpulse"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">45</span><span class="fx-txt"><b>Selective colour</b><small>Everything black and white except one band of colour, which drifts round the wheel and jumps on a drop.</small></span><input type="checkbox" id="fx-selcol"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">46</span><span class="fx-txt"><b>Shimmer</b><small>A fine heat-haze ripple with glitter twinkling on the highlights, brighter on the hi-hats.</small></span><input type="checkbox" id="fx-shimmer"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">47</span><span class="fx-txt"><b>Shockwave</b><small>On a drop, a ripple rings out from the centre and bends the picture as it passes.</small></span><input type="checkbox" id="fx-shock"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">48</span><span class="fx-txt"><b>Silver retention</b><small>The bleach-bypass film look: colours drain, contrast hardens, blacks go inky and the highlights turn metallic silver, with fine grain.</small></span><input type="checkbox" id="fx-silver"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">49</span><span class="fx-txt"><b>Slit-scan</b><small>Each line of the picture shown from a slightly different moment, so anything moving stretches and bends through time.</small></span><input type="checkbox" id="fx-slitscan"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">50</span><span class="fx-txt"><b>Smoke</b><small>Clouds of smoke roll across the picture, glowing with its colours, like a gig smoke machine.</small></span><input type="checkbox" id="fx-smoke"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">51</span><span class="fx-txt"><b>Solarise</b><small>The darkroom trick: highlights flip to glowing negative outlines with a metallic edge.</small></span><input type="checkbox" id="fx-solar"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">52</span><span class="fx-txt"><b>Spinning</b><small>The view turns steadily and reverses direction on each drop.</small></span><input type="checkbox" id="fx-spin"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">53</span><span class="fx-txt"><b>Stained glass</b><small>The picture as a leaded window: glowing panes of colour with dark lead lines between.</small></span><input type="checkbox" id="fx-stained"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">54</span><span class="fx-txt"><b>Triple Spin</b><small>Like Spinning but three times as fast; with Melting trails it swirls into a vortex.</small></span><input type="checkbox" id="fx-spin3"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">55</span><span class="fx-txt"><b>Two-tone cycle</b><small>Splits the picture between two contrasting colours, the pair blooming to the next every so often.</small></span><input type="checkbox" id="fx-ccycle2"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">56</span><span class="fx-txt"><b>Volumetric light</b><small>Light shafts through haze: beams pour between the shapes from a light drifting round the screen.</small></span><input type="checkbox" id="fx-vol"><span class="sw"></span></label>
-        <label class="fx"><span class="fx-num">57</span><span class="fx-txt"><b>Ward anisotropic</b><small>A glossy sheen streaked along a grain, like brushed metal or a vinyl record, with a highlight cross that sweeps round.</small></span><input type="checkbox" id="fx-ward"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">3</span><span class="fx-txt"><b>Beat slices</b><small>The picture cut into strips that jolt sideways on kicks and snares, then snap back; drops scramble them.</small></span><input type="checkbox" id="fx-slices"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">4</span><span class="fx-txt"><b>Beat stutter</b><small>The DJ beat-repeat for the picture: kicks catch a sliver of a beat and repeat it in time, punching in with a flash; drops rewind like tape.</small></span><input type="checkbox" id="fx-stutter"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">5</span><span class="fx-txt"><b>Blacklight poster</b><small>A psychedelic poster under UV: black velvet, six fluorescent day-glo inks, violet-glowing whites and a soft glow.</small></span><input type="checkbox" id="fx-blacklight"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">6</span><span class="fx-txt"><b>Blue Tint</b><small>Silent-film colouring: Azure and Nocturne moonlight tints and a Prussian blue tone, with an amber lamplight tint on drops.</small></span><input type="checkbox" id="fx-bluetint"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">7</span><span class="fx-txt"><b>Breathing zoom</b><small>The whole picture swells towards you on the bass and eases back.</small></span><input type="checkbox" id="fx-breathe"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">8</span><span class="fx-txt"><b>Cel shading</b><small>The cartoon look: flat bands of colour with bold ink outlines, bolder on the kick.</small></span><input type="checkbox" id="fx-cel"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">9</span><span class="fx-txt"><b>Changing symmetry</b><small>The kaleidoscope switches between 5, 6, 8 and 12 sections on drops and every 14 s.</small></span><input type="checkbox" id="fx-symmetry"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">10</span><span class="fx-txt"><b>Chromatic split</b><small>Red, green and blue jump apart on each kick and slide back together.</small></span><input type="checkbox" id="fx-split"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">11</span><span class="fx-txt"><b>Colour bleed</b><small>The picture goes black and white, and colour spreads out from the middle in inky rings on each kick.</small></span><input type="checkbox" id="fx-bleed"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">12</span><span class="fx-txt"><b>Colour by frequency</b><small>The middle glows with the bass, the ring around it with the mids, the outside with the hi-hats.</small></span><input type="checkbox" id="fx-spectrum"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">13</span><span class="fx-txt"><b>Colour cycle</b><small>Slowly cycles the picture through colour moods, each new one blooming out from the middle like ink.</small></span><input type="checkbox" id="fx-ccycle"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">14</span><span class="fx-txt"><b>Colour droplets</b><small>Drops of colour land on each kick, rippling the picture like ink in water.</small></span><input type="checkbox" id="fx-droplets"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">15</span><span class="fx-txt"><b>Comet streaks</b><small>Bright parts streak outward from the centre on each kick.</small></span><input type="checkbox" id="fx-streak"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">16</span><span class="fx-txt"><b>Counter-twist</b><small>The middle turns one way and the outside the other, weaving faster in busy parts.</small></span><input type="checkbox" id="fx-twist"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">17</span><span class="fx-txt"><b>Crumble</b><small>On a drop the picture breaks into grains that blow outwards and fly back; the edges shed grains with the hi-hats.</small></span><input type="checkbox" id="fx-crumble"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">18</span><span class="fx-txt"><b>Dichroic Mirror</b><small>Panes of dichroic glass drift across, passing one band of colour and reflecting its opposite, the colours sliding as they tilt.</small></span><input type="checkbox" id="fx-dichroic"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">19</span><span class="fx-txt"><b>Drops that land</b><small>When the bass returns after a break: colour flash, colour jump and a surge forward.</small></span><input type="checkbox" id="fx-drops"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">20</span><span class="fx-txt"><b>Glass orbs</b><small>Ray-traced glass balls and crystals float over the picture, bending it with rainbow fringes.</small></span><input type="checkbox" id="fx-glass"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">21</span><span class="fx-txt"><b>Glow rays</b><small>The bright parts of the picture bloom with the bass and stream rays of light outwards on every kick.</small></span><input type="checkbox" id="fx-glowrays"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">22</span><span class="fx-txt"><b>Gooch shading</b><small>Illustrator lighting: warm sides facing the lamp, cool sides away, with ink outlines that thicken on the kick.</small></span><input type="checkbox" id="fx-gooch"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">23</span><span class="fx-txt"><b>Infrared film</b><small>The false colours of infrared slide film: greens and cyans glow hot pink and red, reds turn green, with red halation.</small></span><input type="checkbox" id="fx-infrared"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">24</span><span class="fx-txt"><b>Isometric relief</b><small>The picture becomes a 3D landscape seen from above: bright parts rise, dark parts sink.</small></span><input type="checkbox" id="fx-iso"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">25</span><span class="fx-txt"><b>Journey mode</b><small>Moves on to the next background every 32 bars or on a big drop, melting one into the next.</small></span><input type="checkbox" id="fx-journey"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">26</span><span class="fx-txt"><b>Lambertian reflectance</b><small>Lights the picture like an embossed relief with a lamp circling the screen, stronger on the kick.</small></span><input type="checkbox" id="fx-lambert"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">27</span><span class="fx-txt"><b>Liquid wobble</b><small>The picture breathes and ripples like heat haze, harder on kicks.</small></span><input type="checkbox" id="fx-wobble"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">28</span><span class="fx-txt"><b>Living cells</b><small>A glowing membrane of bulging cells over the picture, pulsing with the beat.</small></span><input type="checkbox" id="fx-cells"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">29</span><span class="fx-txt"><b>Luminance</b><small>Bright parts give off light: a soft glow and beams travelling one way, slowly turning.</small></span><input type="checkbox" id="fx-lum"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">30</span><span class="fx-txt"><b>Marbling</b><small>The picture swirls through flowing fractal noise, like marbled paper or ink in water.</small></span><input type="checkbox" id="fx-marble"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">31</span><span class="fx-txt"><b>Matte Black</b><small>Everything coated in matte black, picked out only by a soft, velvety sheen along its curves and edges.</small></span><input type="checkbox" id="fx-matte"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">32</span><span class="fx-txt"><b>Melting drips</b><small>Bright colours run down the screen like wet paint, longer on heavy bass.</small></span><input type="checkbox" id="fx-melt"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">33</span><span class="fx-txt"><b>Melting trails</b><small>Each frame smears outward over the last. Trails stretch on the bass.</small></span><input type="checkbox" id="fx-trails"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">34</span><span class="fx-txt"><b>Morph</b><small>The picture flows through a swirl, pinch, fisheye and wave. The kick deepens it; a drop moves to the next shape.</small></span><input type="checkbox" id="fx-morph"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">35</span><span class="fx-txt"><b>Neon contours</b><small>The picture becomes a glowing neon line drawing; a drop flashes the full picture back.</small></span><input type="checkbox" id="fx-contours"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">36</span><span class="fx-txt"><b>Noir Ink</b><small>Graphic-novel noir: hard inked black and white with one flat, vivid colour kept, and white silhouettes on a drop.</small></span><input type="checkbox" id="fx-noir"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">37</span><span class="fx-txt"><b>Oblique projection</b><small>Bright shapes stand out towards you like 3D lettering while the picture stays face-on.</small></span><input type="checkbox" id="fx-oblique"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">38</span><span class="fx-txt"><b>Oren&ndash;Nayar reflectance</b><small>Lights the picture as a rough, matte relief like clay or the Moon, flattening when the lamp is high and standing out when it sinks low.</small></span><input type="checkbox" id="fx-oren"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">39</span><span class="fx-txt"><b>Pen &amp; ink</b><small>The picture drawn in ink: crisp outlines, stippled dots, hatching and cross-hatching, in black fineliner or blue biro.</small></span><input type="checkbox" id="fx-penink"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">40</span><span class="fx-txt"><b>Pencil shading</b><small>The picture redrawn in graphite on paper: cross-hatched shading, sketchy outlines and strokes that boil like an animated drawing.</small></span><input type="checkbox" id="fx-pencil"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">41</span><span class="fx-txt"><b>Quantum Spin</b><small>With Changing symmetry: the pattern crawls backwards while the picture races forwards, like wagon wheels on film.</small></span><input type="checkbox" id="fx-spin5"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">42</span><span class="fx-txt"><b>Retro 1-Bit</b><small>Pure black and white pixels, shaded with dither patterns like an old Mac.</small></span><input type="checkbox" id="fx-onebit"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">43</span><span class="fx-txt"><b>Retro CGA</b><small>Early-80s PC graphics: big pixels in just black, cyan, magenta and white.</small></span><input type="checkbox" id="fx-cga"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">44</span><span class="fx-txt"><b>Retro Commodore 64</b><small>Big pixels in the C64's muted 16 colours, with dither patterns.</small></span><input type="checkbox" id="fx-c64"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">45</span><span class="fx-txt"><b>Retro PICO-8</b><small>Big pixels in the bright 16-colour PICO-8 fantasy-console palette, with dither patterns.</small></span><input type="checkbox" id="fx-pico"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">46</span><span class="fx-txt"><b>Risograph</b><small>The 90s flyer print: three grainy spot inks on cream paper, slightly out of register.</small></span><input type="checkbox" id="fx-riso"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">47</span><span class="fx-txt"><b>Saturation pulse</b><small>Colour breathes with the music: muted in the quiet parts, flooding back on the bass, vivid on a drop.</small></span><input type="checkbox" id="fx-satpulse"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">48</span><span class="fx-txt"><b>Selective colour</b><small>Everything black and white except one band of colour, which drifts round the wheel and jumps on a drop.</small></span><input type="checkbox" id="fx-selcol"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">49</span><span class="fx-txt"><b>Shimmer</b><small>A fine heat-haze ripple with glitter twinkling on the highlights, brighter on the hi-hats.</small></span><input type="checkbox" id="fx-shimmer"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">50</span><span class="fx-txt"><b>Shockwave</b><small>On a drop, a ripple rings out from the centre and bends the picture as it passes.</small></span><input type="checkbox" id="fx-shock"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">51</span><span class="fx-txt"><b>Silver retention</b><small>The bleach-bypass film look: colours drain, contrast hardens, blacks go inky and the highlights turn metallic silver, with fine grain.</small></span><input type="checkbox" id="fx-silver"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">52</span><span class="fx-txt"><b>Slit-scan</b><small>Each line of the picture shown from a slightly different moment, so anything moving stretches and bends through time.</small></span><input type="checkbox" id="fx-slitscan"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">53</span><span class="fx-txt"><b>Smoke</b><small>Clouds of smoke roll across the picture, glowing with its colours, like a gig smoke machine.</small></span><input type="checkbox" id="fx-smoke"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">54</span><span class="fx-txt"><b>Solarise</b><small>The darkroom trick: highlights flip to glowing negative outlines with a metallic edge.</small></span><input type="checkbox" id="fx-solar"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">55</span><span class="fx-txt"><b>Speaker cone</b><small>The picture bulges out on every kick like a speaker cone, with a ring rippling outwards; drops thump and shake.</small></span><input type="checkbox" id="fx-cone"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">56</span><span class="fx-txt"><b>Spinning</b><small>The view turns steadily and reverses direction on each drop.</small></span><input type="checkbox" id="fx-spin"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">57</span><span class="fx-txt"><b>Stained glass</b><small>The picture as a leaded window: glowing panes of colour with dark lead lines between.</small></span><input type="checkbox" id="fx-stained"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">58</span><span class="fx-txt"><b>Tri-colour print</b><small>The picture screen-printed in three flat inks, like a gig poster; drops pull a fresh set of inks across.</small></span><input type="checkbox" id="fx-tricolour"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">59</span><span class="fx-txt"><b>Triple Spin</b><small>Like Spinning but three times as fast; with Melting trails it swirls into a vortex.</small></span><input type="checkbox" id="fx-spin3"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">60</span><span class="fx-txt"><b>Two-tone cycle</b><small>Splits the picture between two contrasting colours, the pair blooming to the next every so often.</small></span><input type="checkbox" id="fx-ccycle2"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">61</span><span class="fx-txt"><b>Volumetric light</b><small>Light shafts through haze: beams pour between the shapes from a light drifting round the screen.</small></span><input type="checkbox" id="fx-vol"><span class="sw"></span></label>
+        <label class="fx"><span class="fx-num">62</span><span class="fx-txt"><b>Ward anisotropic</b><small>A glossy sheen streaked along a grain, like brushed metal or a vinyl record, with a highlight cross that sweeps round.</small></span><input type="checkbox" id="fx-ward"><span class="sw"></span></label>
       </div>
       <p class="note fx-none" id="fxNone" hidden>No effects match.</p>
     </div>
@@ -3000,9 +3038,15 @@
           <li><b>Viscous Liquid</b> bursts liquid out from the centre of the screen and the pins surge up under it.</li>
           <li><b>Möbius Cells</b> morphs straight into a new shape, with a turn of colour.</li>
           <li><b>Vertex River</b> pulses every mushroom at once, floods the river with light, brings a downpour and a lightning strike, and shifts the palette.</li>
+          <li><b>Pin Field</b> rolls a great swell in from the distance, flashing every head and turning to the next palette.</li>
+          <li><b>Spectral Ridges</b> flashes the whole range and turns its colours.</li>
+          <li><b>Spectrum Horizon</b> flashes the floor, the skyline and the curtains of light, and turns the colours.</li>
+          <li><b>Sand Spectrum</b> blasts the whole pile up into the air to rain back down, and turns the colours.</li>
           <li><b>Morph</b> jumps to its next shape.</li>
           <li><b>Journey mode</b> may move on to the next background.</li>
           <li><b>Shockwave</b> rings out from the centre.</li>
+          <li><b>Glow rays</b> floods the screen with rays of light, and <b>Crumble</b> breaks the picture into grains that blow outwards and fly back.</li>
+          <li><b>Speaker cone</b> gives one big thump with a shake, and <b>Beat slices</b> scrambles every strip before they settle.</li>
           <li><b>Lambertian reflectance</b> swings its lamp to the other side.</li>
           <li><b>Oren&ndash;Nayar reflectance</b> swings its lamp to the other side and drops it low, so the relief leaps out.</li>
           <li><b>Ward anisotropic</b> swaps its record rings for brushed-metal lines.</li>
@@ -3025,6 +3069,7 @@
           <li><b>Infrared film</b> flares its red halation.</li>
           <li><b>Blacklight poster</b> strobes the UV light.</li>
           <li><b>Risograph</b> knocks the ink layers well out of register before they settle.</li>
+          <li><b>Tri-colour print</b> pulls a fresh set of three inks across like a squeegee, with the screens slipping out of register before they settle.</li>
           <li><b>Pencil shading</b> re-draws all the hatching at a new angle.</li>
           <li><b>Pen &amp; ink</b> swaps the black fineliner for blue biro, or back.</li>
           <li><b>Slit-scan</b> switches between rows, columns and rings and flips which end is newest.</li>
@@ -3055,6 +3100,7 @@
         <ol class="g-fx">
           <li><b>3D tilt</b><span>The picture leans like a screen seen at an angle and slowly rocks in two directions, adding depth. <em>Music:</em> none - it's a steady, slow drift that sits well under the other effects.</span></li>
           <li><b>Acid contour bands</b><span>Bright stripes flow across the surfaces like oil on water. Each background lays them out in its own way. <em>Music:</em> they roll steadily, and some backgrounds push them along with the mids.</span></li>
+          <li><b>Beat slices</b><span>The DJ glitch for a still picture: the picture is cut into horizontal strips that jolt sideways, each its own distance, then snap back into place. Made with <b>My Picture</b> in mind, but it works on every background. <em>Music:</em> every kick and snare jolts the strips to new places (kicks hardest), busier music cuts the picture into more strips, and the bass pushes them further; a drop scrambles every strip before they settle.</span></li>
           <li><b>Beat stutter</b><span>The DJ&rsquo;s beat-repeat, done to the picture. The Lab keeps the last moment of the show in memory and judges the tempo from the gaps between kicks; now and then a kick catches the last sixteenth or eighth of a beat and repeats it in time with the music, two to four times, then snaps back to live. Each stutter is made to look deliberate: a white flash as it catches, a zoom-punch on every repeat, and often the bands of the picture sliding apart with colour fringes. <em>Music:</em> set off by the kicks and locked to the tempo, and a drop rewinds the last moment like a VHS tape, with jittering lines and a rolling tracking band, before it plays on.</span></li>
           <li><b>Blacklight poster</b><span>The psychedelic posters of the 60s and 70s, printed in fluorescent inks on black flock and lit by ultraviolet. The dark parts of the picture become black velvet, every colour snaps to one of six day-glo inks (hot pink, orange, yellow, green, cyan and violet), anything white glows the violet of a UV tube, and everything bright gets a soft fluorescent glow. <em>Music:</em> the inks slowly drift round, faster with the mids, the kick pulses the glow, and a drop strobes the UV light for a moment.</span></li>
           <li><b>Blue Tint</b><span>Silent films were shot in black and white and coloured afterwards, scene by scene, to set the mood: blue for night scenes lit only by the moon, amber for scenes lit by lamps and candles. Labs did this two ways, and both are here. <b>Tinting</b> dyed the whole film, so the highlights take the colour and the blacks stay black: <b>Azure</b> is a pale moonlit blue and <b>Nocturne</b> a deep, darker night blue. <b>Toning</b> chemically turned the silver image itself blue in ferric ferrocyanide (Prussian blue), so the shadows and mid-tones go blue while the highlights stay clear: that is <b>Prussian</b>. Each holds for about 40 seconds and then dissolves into the next, with the gentle flicker and grain of an old print. <em>Music:</em> the bass deepens the flicker, and a drop glows the warm amber lamplight tint in for a few seconds, as if someone lit a lamp, before the night blue returns.</span></li>
@@ -3068,9 +3114,11 @@
           <li><b>Colour droplets</b><span>Drops of colour land at random spots. Each one sends out a ripple that bends the picture, with a bloom of ink-like colour that fades over about two seconds. <em>Music:</em> a drop lands on each kick, and the odd one falls when it's quiet. Up to six can be spreading at once.</span></li>
           <li><b>Comet streaks</b><span>The bright parts streak outward from the centre like a zoom blur, then draw back. Looks best on sparkly or dotty backgrounds such as Vertex Shader, Radio Storm and Line Fractals. <em>Music:</em> the streaks jump out on each kick, longer on harder ones.</span></li>
           <li><b>Counter-twist</b><span>The middle of the picture turns one way while the outside turns the other, then they swing back, so shapes weave through each other. Try it with Changing symmetry. <em>Music:</em> weaves faster when the mids (vocals, synths) are busy.</span></li>
+          <li><b>Crumble</b><span>The picture breaks apart: on each drop it bursts into thousands of grains that blow outwards from the middle, some vanishing altogether, then flies back together over a second and a half. Made with <b>My Picture</b> in mind, but it works on every background. <em>Music:</em> every kick shakes the picture loose for a moment, about every thirty-second kick (and on every drop) it falls apart completely, and the hi-hats make the edges shed a few grains.</span></li>
           <li><b>Dichroic Mirror</b><span>Dichroic glass is coated so it lets one band of colours through and reflects the opposite band, and the colours change with the angle you see it from, which is why dichroic art and buildings shimmer gold, magenta and cyan as you walk past. Here three panes of it drift slowly across the picture: inside each you see the picture in the colour the glass passes, overlaid with a mirrored, slightly offset reflection in the complementary colour. Each pane slowly tilts, sliding its colours round the spectrum, and where panes overlap their filters stack into deeper colours. <em>Music:</em> the mids speed the drift, the bass tilts the panes so their colours sweep, the kick and hi-hats glint off the glass edges, and a drop flips every pane so the passed and reflected colours swap.</span></li>
           <li><b>Drops that land</b><span>Makes drops dramatic: a coloured flash, the colours jump halfway round the wheel, a surge forward and a half-turn roll. <em>Music:</em> fires on each drop. With it off, drops still do their quieter changes.</span></li>
           <li><b>Glass orbs</b><span>Ray-traced glass floating over the picture. Each pixel of an orb follows a ray of light into the glass, bends, crosses it and bends again on the way out, so the background shows through upside down and curved like a crystal ball, with rainbow fringes where the colours split, a reflection round the edge, a bright highlight and a soft shadow on the picture beneath. It moves between one big sphere, three smaller ones, a cut crystal and three crystals. Works on every background. <em>Music:</em> the orbs drift, faster when the mids are busy, and swell a little on each kick; the rainbow fringes grow with the hi-hats; a drop moves on to the next arrangement.</span></li>
+          <li><b>Glow rays</b><span>Light from the picture itself: its bright parts bloom softly and stream rays of light outwards from the middle, like sunbeams or a stage light through haze. Lovely on night photos and pictures with lights in them. Made with <b>My Picture</b> in mind, but it works on every background. <em>Music:</em> the bloom swells with the bass, every kick sends the rays streaming out longer and brighter before they fade, and a drop floods the screen with them.</span></li>
           <li><b>Gooch shading</b><span>The illustrator's lighting: instead of light and dark, the sides of shapes facing a lamp turn warm and the sides turned away turn cool, with dark ink outlines round everything, like a screen-printed poster or a cel-shaded game. The warm and cool pair starts as orange and blue and slowly drifts round the colour wheel. <em>Music:</em> the lamp circles faster with the beat, the outlines thicken on the kick, and a drop swaps warm and cool so lit sides go cool and shadows go warm.</span></li>
           <li><b>Infrared film</b><span>The false colours of infrared slide film such as Kodak Aerochrome, made for spotting camouflage and loved by psychedelic photographers. The film sees infrared as red, red as green and green as blue, so leaves and anything green or cyan glow hot pink and red, reds turn yellow-green and blues sink dark, with a red halation blooming round the brightest parts and a fine grain. <em>Music:</em> the bass blooms the halation, the hi-hats fizz the grain, and a drop flares the halation.</span></li>
           <li><b>Isometric relief</b><span>Turns the picture into a 3D landscape seen from above at an angle, drawn in parallel (isometric) projection like a strategy game or architect's drawing: the brightness becomes height, so bright parts rise as plateaus and towers and dark parts sink into valleys, lit from one side. It switches between a city of little coloured blocks and a smooth rolling terrain. Works on every background; busy, high-contrast ones like Neon Village, Dark City and Liquid Light Show make the best cities. It is heavier than the other effects, so turn it off if things stutter. <em>Music:</em> the view slowly drifts round the landscape and the blocks rise and sink smoothly as the picture changes; on each kick the landscape swells taller, brightens and catches up with the picture faster, and busy mids speed up the orbit; a drop swings the view round to the other side and swaps between city and terrain.</span></li>
@@ -3104,8 +3152,10 @@
           <li><b>Slit-scan</b><span>The old film trick behind the star-gate sequence in <i>2001: A Space Odyssey</i>: each line of the picture is shown from a slightly different moment, the top lagging up to most of a second behind the bottom, so anything moving stretches, leans and bends through time while still parts stay put. It can run in rows, in columns or in rings out from the centre. <em>Music:</em> the bass deepens the time lag, and a drop switches between rows, columns and rings and flips which end is newest.</span></li>
           <li><b>Smoke</b><span>Drifting clouds of fractal smoke roll across the picture, like a smoke machine at a gig. The picture glows through the thin parts and is softened behind the thick parts, and the smoke picks up the colours of whatever is lighting it from behind. Made for pairing with <b>Volumetric light</b>, whose beams look like light through smoke. <em>Music:</em> the smoke drifts faster with the mids and billows thicker on each kick; a drop puffs out a burst.</span></li>
           <li><b>Solarise</b><span>The darkroom trick known as the Sabattier effect, used on many psychedelic album photos: anything brighter than a cut-off is flipped to its negative, so dark areas stay dark while highlights turn into glowing negative outlines with an eerie metallic edge. Each colour is flipped on its own, as in the darkroom, which brings odd colour shifts. <em>Music:</em> the bass lowers the cut-off, so more of the picture flips on the kick, and a drop flashes the full negative, easing back over about a second.</span></li>
+          <li><b>Speaker cone</b><span>The picture as a speaker cone: on every kick the middle bulges out towards you and a ring ripples outwards from it, as if the music were pushing the picture from behind. Made with <b>My Picture</b> in mind, but it works on every background. <em>Music:</em> each kick pushes the cone out, the bass holds it out a little between kicks, and kicks are measured against the track&rsquo;s own level so loud tracks still thump; a drop gives one big thump with a strong ring and a shake.</span></li>
           <li><b>Spinning</b><span>The view turns slowly and steadily. <em>Music:</em> turns faster on the bass and reverses direction on each drop.</span></li>
           <li><b>Stained glass</b><span>Turns the picture into a leaded church window using cellular texturing: it is broken into irregular panes, each glowing with one rich colour taken from the picture at that spot, brightest at its heart, with dark lead lines between and glints of light sweeping across the old, uneven glass. The background stays recognisable, just made of glass. Best on colourful backgrounds like Neon Kaleidoscope, Spectrum Mandala and Liquid Light Show, and lovely with <b>Volumetric light</b>. <em>Music:</em> the panes drift slowly, faster when the mids are busy; the glass brightens and the lead thickens on each kick; glints flash with the hi-hats; a drop re-leads the window in a new pattern.</span></li>
+          <li><b>Tri-colour print</b><span>The screen-printed gig poster: the picture is cut into just three flat inks, one for the shadows, one for the midtones and one for the highlights, on lightly grained paper. Six ink sets take turns about every 45 seconds: navy, red and cream; teal, orange and sand; aubergine, magenta and acid lime; black, red and beige; deep sea, jade and foam; and oxblood, orange and gold. Best on backgrounds with plenty of shape and light, like Fractal Tunnel, Morphing Sphere and Holographic Rubik&rsquo;s. <em>Music:</em> the bass lowers the cuts so more of the picture rises into the brighter inks, and each kick nudges them further; a drop pulls the next ink set across like a squeegee while the screens slip out of register, giving coloured fringes like old Technicolor film, before they settle.</span></li>
           <li><b>Triple Spin</b><span>The same as <b>Spinning</b> but three times as fast, about one turn every 12 seconds when quiet. On its own the pattern stays the same, just turning faster; with <b>Melting trails</b> on, each frame smears round behind the last and the picture swirls into a vortex. If more than one spin effect is on, the fastest wins. <em>Music:</em> turns faster on the bass and reverses direction on each drop.</span></li>
           <li><b>Two-tone cycle</b><span>Like Colour cycle, but instead of one colour mood it splits the picture between two contrasting colours: magenta and cyan, teal and orange, violet and lime, blue and red, purple and gold, then green and pink. Which colour each part takes depends on both how bright it is and which side of the colour wheel it was on, so darker, cooler parts take one and brighter, warmer parts the other. Each pair holds for about 20 seconds, then the next blooms out from the middle like ink, with a softly glowing edge. <em>Music:</em> the change spreads quicker when the mids are busy, the glowing edge brightens on the bass, and a drop starts the next change straight away.</span></li>
           <li><b>Volumetric light</b><span>Light shafts, or "god rays": the picture looks lit through smoke or haze, like stage lights through a smoke machine or sunlight through trees. A light drifts slowly around the screen and beams pour from it through the gaps, while dark shapes block it and cast long shadow rays. Unlike <b>Comet streaks</b>, which only bursts on the kick, the haze is there all the time. Best on backgrounds with strong shapes, like Fractal Tree, Neon Kaleidoscope, Spectrum Mandala and Dark City. <em>Music:</em> the beams brighten and reach further on each kick, the light drifts faster when the mids are busy, and a drop moves it somewhere new with a flash.</span></li>
@@ -3184,6 +3234,11 @@
             <li><span class="cr-num">54</span><div><div class="cr-head"><b>Viscous Liquid</b><span class="cr-tag cr-tag--adapted">Adapted</span></div><span class="cr-src">Based on &quot;Viscous Liquid - Cursor FX&quot; by <b>Sabo Sugi</b><a href="https://codepen.io/editor/sabosugi/pen/01a125aa-40e8-70ca-b198-550dc149d263" target="_blank" rel="noopener">codepen.io/sabosugi</a></span><span class="cr-note">Its fluid simulation and refracting liquid surface ported from Three.js to plain WebGL 1, over a live field of rubber pins in place of the photo, rising and sinking with the sound like Isometric relief (or your own picture); the cursor is replaced by stirrers and splashes driven by the music.</span></div></li>
             <li><span class="cr-num">55</span><div><div class="cr-head"><b>Möbius Cells</b><span class="cr-tag cr-tag--adapted">Adapted</span></div><span class="cr-src">Based on &quot;Möbius Cells&quot; by <b>pixelomo</b><a href="https://codepen.io/pixelomo/pen/dPOWKXa" target="_blank" rel="noopener">codepen.io/pixelomo</a></span><span class="cr-note">Its raymarched tiles, spiral mapping and random shape morphs ported from Three.js to plain WebGL 1; the tiles pump with the bass, the spirals speed with the mids, and drops morph straight to a new shape.</span></div></li>
             <li><span class="cr-num">56</span><div><div class="cr-head"><b>Vertex River</b><span class="cr-tag cr-tag--original">Original</span></div><span class="cr-note">Made for this lab: a river of glowing points in the style of Vertex Ocean, with rocks, rain, lightning, a treeline, sparkling stars, mushrooms and streaming weeds drawn with the bell and tendril shaders of Bioluminescent Tendrils (after Alexander Nemankov).</span></div></li>
+            <li><span class="cr-num">57</span><div><div class="cr-head"><b>Pin Field</b><span class="cr-tag cr-tag--original">Original</span></div><span class="cr-note">Made for this lab: an endless field of chrome-stemmed pins with glowing glass heads, raymarched cell by cell like Viscous Liquid&rsquo;s pins but without the liquid. The field is a running picture of the sound, kicks send ripples across it, and drops roll a great swell towards you and turn the palette.</span></div></li>
+            <li><span class="cr-num">58</span><div><div class="cr-head"><b>Spectral Ridges</b><span class="cr-tag cr-tag--original">Original</span></div><span class="cr-note">Made for this lab: the spectrum laid down thirty times a second as fine glowing ridge lines that recede into the dark, rainbow-coloured from bass to highs, with hairs hanging from the nearest ridges, drifting dust and a soft glow; inspired by a waveform-landscape picture.</span></div></li>
+            <li><span class="cr-num">59</span><div><div class="cr-head"><b>Spectrum Horizon</b><span class="cr-tag cr-tag--original">Original</span></div><span class="cr-note">Made for this lab from a picture: a glossy floor of woven tiles that carries the sound towards you in waves, a skyline of thin glowing spectrum bars on the horizon, and curtains of light rising into a starry sky, all drawn in a single shader.</span></div></li>
+            <li><span class="cr-num">60</span><div><div class="cr-head"><b>Sand Spectrum</b><span class="cr-tag cr-tag--original">Original</span></div><span class="cr-note">Made for this lab: coloured sand poured into the shape of the spectrum like a sand-art bottle, a simple sand simulation (pouring, sinking and sliding to the angle of repose) that remembers the colour of every layer, with grains blown off the peaks by the kicks.</span></div></li>
+            <li><span class="cr-num">61</span><div><div class="cr-head"><b>My Picture</b><span class="cr-tag cr-tag--original">Original</span></div><span class="cr-note">Made for this lab: your own picture as the background, kept on this device, for the effects to work on.</span></div></li>
         </ol>
         </details>
       </section>
@@ -7121,6 +7176,299 @@ void main(){
   gl_FragColor = vec4(vC * pow(1.0 - d * 2.0, 1.5) * uGain, 1.0);
 }
 </script>
+<!-- Pin Field (original): an endless field of pins with chrome stems and glowing glass heads, seen from low down as the camera creeps
+     forward. The whole field is a running picture of the sound (bass in the middle, highs out to the sides, the newest sound
+     at the front rolling away into the distance), kicks send ripples out across it and a drop rolls a great swell towards you -->
+<script type="x-shader/x-fragment" id="pinfFrag">
+precision highp float;
+uniform vec2 uRes;
+uniform vec3 uCam, uFwd, uRight, uUp;
+uniform float uFocal, uHead, uLift, uBass, uHigh, uKick, uFlash, uGain, uTime;
+uniform sampler2D uSpec;                                              // the sound over the last few seconds: 64 bands x 64 moments (a ring buffer)
+uniform vec4 uRip0, uRip1, uRip2, uRip3, uRip4, uRip5;                // ripples: centre x, z, radius, strength
+uniform vec2 uWave;                                                   // the drop's swell: where it is (z), how tall
+uniform vec3 uPal;                                                    // palette now, palette next, how far between them
+const float SR = 0.06, HR = 0.23, TOP = 7.4;
+/* four palettes, each running from the bass colour (middle of the field) through to the highs colour (out at the sides) */
+vec3 palC(float p, float t){
+  vec3 a, b, c;
+  if (p < 0.5)      { a = vec3(1.0, 0.16, 0.52); b = vec3(1.0, 0.52, 0.10); c = vec3(0.12, 0.82, 1.0); }    // synth sunset: magenta, orange, cyan
+  else if (p < 1.5) { a = vec3(0.22, 0.36, 1.0); b = vec3(0.25, 0.92, 1.0); c = vec3(0.92, 0.97, 1.0); }    // ice: blue, aqua, white
+  else if (p < 2.5) { a = vec3(0.10, 1.0, 0.32); b = vec3(0.88, 1.0, 0.10); c = vec3(0.02, 0.88, 0.74); }   // acid: green, lemon, teal
+  else              { a = vec3(1.0, 0.10, 0.04); b = vec3(1.0, 0.46, 0.04); c = vec3(1.0, 0.84, 0.34); }   // ember: red, orange, gold
+  return t < 0.5 ? mix(a, b, t * 2.0) : mix(b, c, t * 2.0 - 1.0);
+}
+vec3 pal(float t){ return mix(palC(uPal.x, t), palC(uPal.y, t), uPal.z); }
+float h1(vec2 c){ return fract(sin(dot(c, vec2(127.1, 311.7))) * 43758.5453); }
+/* stars, fixed in the sky as the camera turns: each layer a grid over the sky with at most one star per cell; they twinkle,
+   sparkle harder with the highs, and the brightest throw out four thin spikes */
+vec3 stars(vec3 rd){
+  if (rd.y < -0.02) return vec3(0.0);
+  vec3 s = vec3(0.0);
+  vec2 a = vec2(atan(rd.x, rd.z), rd.y);
+  for (int k = 0; k < 3; k++){
+    float fk = float(k), sc = 70.0 + fk * 55.0;
+    vec2 g = vec2(a.x * sc / 3.14159, a.y * sc * 1.15) + fk * 17.3, id = floor(g), f = fract(g);
+    float h = h1(id + fk * 7.1);
+    if (h > 0.22 + fk * 0.12) continue;
+    vec2 o = vec2(h1(id + 3.3), h1(id + 9.1)) * 0.7 + 0.15, d = f - o;
+    float tw = 0.55 + 0.45 * sin(uTime * (1.5 + h * 9.0) + h * 61.0);
+    tw *= tw;
+    float b = (1.0 - fk * 0.3) * tw * (0.6 + uHigh * 0.9 + uKick * 0.3);
+    float core = exp(-dot(d, d) * (1400.0 + fk * 900.0)) * 1.2;
+    float spk = h < 0.05 ? (exp(-abs(d.x) * 160.0) * exp(-abs(d.y) * 30.0) + exp(-abs(d.y) * 160.0) * exp(-abs(d.x) * 30.0)) * 0.45 * tw : 0.0;
+    s += mix(vec3(0.85, 0.9, 1.0), pal(h * 4.0), 0.25) * (core + spk) * b;
+  }
+  return s * smoothstep(-0.02, 0.06, rd.y);
+}
+float rip(vec4 r, vec2 c){ if (r.w < 0.001) return 0.0; float d = length(c - r.xy) - r.z, d2 = d + 1.9, d3 = d + 4.2;   // a crest, the trough behind it, a smaller second crest
+  return r.w * (exp(-d * d * 0.45) - 0.45 * exp(-d2 * d2 * 0.6) * step(1.9, r.z) + 0.4 * exp(-d3 * d3 * 0.5) * step(4.2, r.z)); }
+/* one pin: its height, how loud its sound is, and where it sits across the spectrum */
+vec3 pin(vec2 c){
+  float dx = c.x - uCam.x, dz = c.y - uCam.z;
+  float band = clamp(abs(dx) / (2.5 + max(dz, 0.0) * 0.5), 0.0, 1.0);                   // bass in the middle, highs out to the sides
+  float back = clamp((dz - 2.0) / 46.0, 0.0, 1.0) * 62.0;                               // the front is now, the far end a few seconds ago
+  float snd = texture2D(uSpec, vec2((band * 63.0 + 0.5) / 64.0, (uHead - back + 0.5) / 64.0)).x;
+  float extra = rip(uRip0, c) + rip(uRip1, c) + rip(uRip2, c) + rip(uRip3, c) + rip(uRip4, c) + rip(uRip5, c);
+  float wd = c.y - uWave.x; extra += uWave.y * exp(-wd * wd * 0.07);
+  float h = 0.3 + 0.35 * h1(c) + snd * uLift + extra;
+  return vec3(clamp(h, 0.15, TOP - HR - 0.05), clamp(snd + max(extra, 0.0) * 0.35, 0.0, 1.6), band);
+}
+vec3 sky(vec3 rd){
+  vec3 haze = pal(0.45) * 0.16;
+  float hz = exp(-max(rd.y, 0.0) * 7.0);
+  return mix(vec3(0.004, 0.003, 0.014), haze, hz) + pal(0.0) * 0.05 * exp(-abs(rd.y) * 30.0);
+}
+void main(){
+  vec2 sp = (gl_FragCoord.xy - 0.5 * uRes) / (0.5 * uRes.y);
+  vec3 rd = normalize(uFwd * uFocal + uRight * sp.x + uUp * sp.y), ro = uCam;
+  vec3 col = sky(rd) + stars(rd), glow = vec3(0.0);
+  vec3 haze = pal(0.45) * 0.16;
+  if (rd.y < -0.0005 || ro.y < TOP){                                  // looking down, or up at pins taller than the camera
+    bool down = rd.y < -0.0005;
+    float t = down ? max(0.0, (ro.y - TOP) / -rd.y) : 0.0;
+    float tEnd = down ? min(78.0, ro.y / -rd.y) : (rd.y > 0.0005 ? min(78.0, (TOP - ro.y) / rd.y) : 78.0);
+    vec2 inv = 1.0 / max(abs(rd.xz), vec2(1e-4)), sg = sign(rd.xz);
+    vec3 p = ro, P = vec3(0.0); vec2 c = vec2(0.0), q = vec2(0.0);
+    float kind = 0.0;                                                 // 0 nothing, 1 a head, 2 a stem, 3 the floor
+    for (int i = 0; i < 230; i++){
+      if (t >= tEnd){ if (down && tEnd < 78.0){ kind = 3.0; t = tEnd; } break; }
+      p = ro + rd * t;
+      c = floor(p.xz) + 0.5; q = p.xz - c;
+      P = pin(c);
+      float dS = max(length(q) - SR, p.y - P.x);
+      float dH = length(vec3(q.x, p.y - P.x, q.y)) - HR;
+      float g = max(dH, 0.0);
+      glow += pal(P.z) * P.y * P.y * 0.010 / (1.0 + g * g * 45.0) * exp(-t * 0.04);   // the heads' neon halo
+      if (dH < 0.002){ kind = 1.0; break; }
+      if (dS < 0.002){ kind = 2.0; break; }
+      vec2 te = (0.5 - q * sg) * inv;                                 // how far to the edge of this cell
+      t += min(min(dS, dH), min(te.x, te.y) + 0.002);
+    }
+    if (kind > 0.5){
+      p = ro + rd * t;
+      vec3 L = normalize(vec3(-0.4, 0.75, 0.55));
+      vec3 base = pal(P.z);
+      if (kind < 1.5){                                                // a glass head, lit from inside by its sound
+        vec3 n = normalize(vec3(q.x, p.y - P.x, q.y));
+        float dif = max(dot(n, L), 0.0), spc = pow(max(dot(n, normalize(L - rd)), 0.0), 60.0);
+        float fr = pow(1.0 - max(dot(n, -rd), 0.0), 3.0);
+        float lit = 0.03 + P.y * 0.95 + uKick * 0.15;
+        col = base * (0.06 + 0.1 * dif) + base * lit + mix(base, vec3(1.0), 0.6) * uFlash * 0.9
+            + vec3(spc) * 0.8 + sky(reflect(rd, n)) * fr * 0.8;
+      } else if (kind < 2.5){                                         // a chrome stem, catching its head's light from above
+        vec3 n = normalize(vec3(q.x, 0.0, q.y)), r = reflect(rd, n);
+        float band = smoothstep(-0.15, 0.35, r.y);
+        col = mix(vec3(0.02, 0.02, 0.026), vec3(0.16, 0.16, 0.19) + haze * 1.5, band) + vec3(pow(max(dot(r, L), 0.0), 30.0)) * 0.6;
+        col += base * P.y * 0.45 * smoothstep(P.x - 1.4, P.x, p.y);
+        col *= 0.55 + 0.45 * clamp(p.y / max(P.x, 0.3), 0.0, 1.0);
+      } else {                                                        // the dark floor, glowing under each lit head
+        float d = length(q);
+        col = vec3(0.008, 0.007, 0.014) + base * P.y * 0.35 * exp(-d * 2.6) / (1.0 + P.x * 0.25);
+        col *= 0.6 + 0.4 * smoothstep(SR, SR + 0.2, d);
+      }
+      col = mix(col, haze, 1.0 - exp(-t * 0.028));                    // into the haze
+    }
+  }
+  col += glow * (1.0 + uHigh * 0.6);
+  col = 1.0 - exp(-col * 1.35);
+  gl_FragColor = vec4(col * uGain, 1.0);
+}
+</script>
+<!-- Spectral Ridges (original): the sound drawn as a landscape of fine glowing lines, one ridge line for each moment,
+     the newest at the front and the older ones receding into the dark, coloured through a rainbow from the bass on the left
+     to the highs on the right; fine hairs hang from the nearest ridges and dust drifts beneath them -->
+<script type="x-shader/x-fragment" id="ridgePicFrag">
+/* Spectral Ridges: your own picture behind the ridges, filling the screen (cropped, never stretched) and dimmed a little
+   so the glowing lines still stand out */
+precision mediump float;
+uniform sampler2D uTex;
+uniform vec2 uRes;
+uniform float uAsp, uDim;
+void main(){
+  vec2 c = gl_FragCoord.xy / uRes - 0.5;
+  float sa = uRes.x / uRes.y;
+  if (sa > uAsp) c.y *= uAsp / sa; else c.x *= sa / uAsp;
+  gl_FragColor = vec4(texture2D(uTex, c + 0.5).rgb * uDim, 1.0);
+}
+</script>
+<script type="x-shader/x-vertex" id="ridgeVert">
+attribute vec4 aPos;                    // x, height, depth, brightness
+attribute float aRnd;                   // a random number per point, for the dust
+uniform mat4 uVP;
+uniform float uMode, uHue, uPx, uFlash, uWidth;
+varying vec3 vCol;
+vec3 rainbow(float h){ return clamp(abs(mod(h * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0) - 1.0, 0.0, 1.0); }
+void main(){
+  vec3 p = aPos.xyz;
+  float h = max(p.y, 0.0);
+  if (uMode > 1.5) p.y -= aRnd * (0.2 + h * 0.75);                    // dust: scattered below the ridge
+  gl_Position = uVP * vec4(p, 1.0);
+  float t = clamp(aPos.x / uWidth + 0.5, 0.0, 1.0);
+  vec3 c = rainbow(fract(0.02 + t * 0.72 + uHue));                    // red and orange on the left through to blue and violet
+  c = mix(c, vec3(1.0), smoothstep(1.5, 3.0, h) * 0.7);              // the tallest peaks burn white
+  vCol = c * aPos.w * (1.0 + uFlash);
+  gl_PointSize = uPx * (0.6 + aRnd * 0.9);
+}
+</script>
+<script type="x-shader/x-fragment" id="ridgeFrag">
+precision highp float;
+varying vec3 vCol;
+uniform float uMode, uGain;
+void main(){
+  float a = 1.0;
+  if (uMode > 1.5) a = smoothstep(0.5, 0.05, length(gl_PointCoord - 0.5));
+  gl_FragColor = vec4(vCol * a * uGain, 1.0);
+}
+</script>
+<!-- Spectrum Horizon (original): a glossy floor of woven tiles stretching away to a skyline of thin glowing spectrum
+     bars on the horizon (bass in the middle, highs out to the sides), curtains of light rising behind them into a starry
+     sky; the floor carries the sound towards you in waves, the newest at the horizon -->
+<script type="x-shader/x-fragment" id="shzFrag">
+precision highp float;
+uniform vec2 uRes;
+uniform float uTime, uHead, uBass, uMid, uHigh, uKick, uFlash, uHue, uGain, uScroll;
+uniform sampler2D uSpec;                                              // the sound over the last few seconds: 64 bands x 64 moments (a ring buffer)
+float h1(vec2 c){ return fract(sin(dot(c, vec2(127.1, 311.7))) * 43758.5453); }
+vec3 hueShift(vec3 c, float a){                                       // turn a colour round the colour wheel
+  const vec3 k = vec3(0.57735);
+  float ca = cos(a * 6.28318), sa = sin(a * 6.28318);
+  return c * ca + cross(k, c) * sa + k * dot(k, c) * (1.0 - ca);
+}
+/* the colours across the scene: gold and orange to the left, cyan in the middle, pink and violet to the right */
+vec3 sideCol(float x){
+  float a = abs(x);
+  vec3 side = x < 0.0 ? mix(vec3(1.0, 0.78, 0.25), vec3(1.0, 0.36, 0.12), smoothstep(0.3, 1.0, a))
+                      : mix(vec3(1.0, 0.5, 0.62), vec3(0.6, 0.32, 1.0), smoothstep(0.4, 1.0, a));
+  return hueShift(mix(vec3(0.25, 0.9, 1.0), side, smoothstep(0.04, 0.32, a)), uHue);
+}
+float spec(float band, float age){ return texture2D(uSpec, vec2((clamp(band, 0.0, 1.0) * 63.0 + 0.5) / 64.0, (uHead - age + 0.5) / 64.0)).x; }
+void main(){
+  float asp = uRes.x / uRes.y;
+  vec2 p = (gl_FragCoord.xy - 0.5 * uRes) / uRes.y;                   // y runs -0.5 (bottom) to 0.5 (top)
+  float hz = -0.1;                                                    // the horizon
+  float xn = p.x / (0.5 * asp);                                       // -1 at the left edge, 1 at the right
+  vec3 col = mix(vec3(0.03, 0.05, 0.17), vec3(0.008, 0.01, 0.035), smoothstep(hz, 0.5, p.y));
+  if (p.y > hz){
+    /* stars */
+    vec2 sg = p * 110.0, sid = floor(sg); float sh = h1(sid);
+    if (sh < 0.06){ vec2 d = fract(sg) - (vec2(h1(sid + 3.1), h1(sid + 7.7)) * 0.6 + 0.2); col += vec3(0.8, 0.85, 1.0) * exp(-dot(d, d) * 260.0) * (0.4 + 0.6 * sin(uTime * (1.0 + sh * 30.0) + sh * 50.0)) * (0.5 + uHigh); }
+    /* the skyline: three rows of thin spectrum bars, the nearest widest, tallest in the middle */
+    for (int L = 0; L < 3; L++){
+      float fl = float(L), bw = 0.0045 + fl * 0.0035;
+      float cell = floor(p.x / bw), cx = (cell + 0.5) * bw / (0.5 * asp);
+      float s = spec(abs(cx), fl * 3.0), r = h1(vec2(cell, fl + 1.0));
+      float ht = (0.015 + s * 0.3 * (0.15 + 1.1 * r * r)) * (1.5 - 1.05 * abs(cx)) * (1.0 + uKick * 0.25) * (1.0 - fl * 0.2);   // spiky: most bars short, a few shooting up
+      float t = (p.y - hz) / ht;
+      float fx = fract(p.x / bw), bar = smoothstep(0.0, 0.2, fx) * smoothstep(1.0, 0.65, fx);
+      vec3 c = mix(vec3(1.0, 0.82, 0.38), sideCol(cx), smoothstep(0.05, 0.75, t));
+      float b = (0.18 + s * 0.85) * (1.0 - fl * 0.3);
+      col += c * bar * b * step(t, 1.0) * (0.55 + 0.45 * t);            // the bar, brightest towards its tip
+      col += sideCol(cx) * bar * b * 0.35 * exp(-max(t - 1.0, 0.0) * 6.0) * step(1.0, t);   // a soft glow above its tip
+    }
+  } else {
+    /* the floor: still, glossy tiles in perspective, each lighting up with the sound for its place: the bass down the
+       middle, the highs out to the sides, and the sound rolling in across the tiles from the horizon towards you */
+    float dz = hz - p.y, z = 0.22 / dz;                               // how far away this part of the floor is
+    float u = p.x * z, v = z;
+    vec2 g = vec2(u * 7.0, v * 3.6);
+    float row = floor(g.x);
+    g.y += 0.5 * mod(row, 2.0);                                       // each strip offset from the next, like woven ribbons
+    vec2 id = floor(g), f = fract(g);
+    float r = h1(id);
+    /* the tiles mirror the skyline: each tile looks at the bars straight above it on the screen and lights if it lies
+       within their reflection, so the spectrum's shape is drawn again on the floor in tiles, coloured to match */
+    float zc = (id.y + 0.5 - 0.5 * mod(row, 2.0)) / 3.6, uc = (id.x + 0.5) / 7.0;
+    float cx = clamp((uc / max(zc, 0.05)) / (0.5 * asp), -1.0, 1.0);    // where the tile's centre sits across the screen
+    float s = spec(abs(cx), 0.0);
+    float refl = (0.015 + s * 0.3 * 0.7) * (1.5 - 1.05 * abs(cx)) * (1.0 + uKick * 0.25) * 0.95;   // the bars' height there, reflected
+    float down = 0.22 / zc;                                           // how far below the horizon the tile's centre is
+    float on = smoothstep(refl * 1.08, refl * 0.92, down);
+    float tip = exp(-pow((down - refl) / max(refl * 0.18, 0.004), 2.0));   // the tiles at the reflection's edge burn brightest
+    vec3 barC = mix(vec3(1.0, 0.82, 0.38), sideCol(cx), smoothstep(0.05, 0.75, down / max(refl, 0.01)));
+    float seam = smoothstep(0.0, 0.07, f.x) * smoothstep(1.0, 0.93, f.x) * smoothstep(0.0, 0.05, f.y) * smoothstep(1.0, 0.95, f.y);
+    float sheen = pow(max(0.0, 1.0 - abs(f.x - 0.35) * 2.2), 3.0) * (0.35 + 0.25 * sin(row * 1.7 + id.y * 0.9));
+    vec3 near = hueShift(mix(vec3(0.12, 0.35, 1.0), vec3(0.15, 0.85, 0.65), r) * (0.6 + 0.4 * h1(id + 5.0)), uHue);
+    vec3 tile = mix(near * 0.8, barC, on);                            // lit tiles take the bars' colours; the rest stay a dim blue and green
+    float lit = 0.08 + on * (0.3 + s * 0.9) + tip * on * 0.35 + uKick * 0.2 * exp(-z * 0.3);
+    float detail = 1.0 - smoothstep(4.0, 14.0, z);                    // far away the tiles blur together (no shimmer)
+    col = tile * lit * mix(1.0, seam, detail) + tile * sheen * 0.5 * detail * (0.3 + on * s + uHigh * 0.4);
+    col += sideCol(xn) * exp(-dz * 14.0) * (0.35 + uBass * 0.4);       // the skyline's glow on the far floor
+    col = mix(col, sideCol(xn) * 0.35, smoothstep(8.0, 30.0, z));      // into the haze
+  }
+  col += sideCol(xn) * exp(-abs(p.y - hz) * 40.0) * (0.25 + uBass * 0.5 + uFlash);   // the bright line of the horizon
+  col *= 1.0 + uFlash * 0.6;
+  col = 1.0 - exp(-col * 1.4);
+  gl_FragColor = vec4(col * uGain, 1.0);
+}
+</script>
+<!-- Sand Spectrum (original): coloured sand poured into the shape of the spectrum, like a sand-art bottle. The pile is a grid
+     of cells (each remembering the colour of the sand that filled it, so the music lays down coloured strata), drawn grain
+     by grain; airborne grains are points drawn over it -->
+<script type="x-shader/x-fragment" id="sandFrag">
+precision highp float;
+uniform vec2 uRes;
+uniform sampler2D uCells;                                             // the pile: rgb = the sand's colour, a = how full the cell is
+uniform vec2 uGrid;                                                   // columns, rows
+uniform float uTop, uTime, uHigh, uFlash, uGain;
+float h1(vec2 c){ return fract(sin(dot(c, vec2(127.1, 311.7))) * 43758.5453); }
+void main(){
+  vec2 uv = gl_FragCoord.xy / uRes;
+  vec3 bg = mix(vec3(0.05, 0.035, 0.03), vec3(0.012, 0.012, 0.03), uv.y) * (1.0 + uFlash * 0.6);
+  vec3 col = bg;
+  float gy = uv.y / uTop * uGrid.y;                                   // the pile fills the lower part of the screen
+  if (gy < uGrid.y){
+    vec2 cell = vec2(floor(uv.x * uGrid.x), floor(gy));
+    vec4 c = texture2D(uCells, (cell + 0.5) / uGrid);
+    float fill = c.a, fy = fract(gy);
+    if (fill > 0.001 && fy <= fill){
+      vec2 gp = floor(gl_FragCoord.xy / max(1.0, uRes.y / 520.0));    // one grain every pixel or two
+      float g = h1(gp), g2 = h1(gp + 17.3);
+      vec3 sand = c.rgb * (0.72 + 0.4 * g);
+      sand *= 0.55 + 0.45 * smoothstep(0.0, 18.0, gy);               // darker down at the bottom of the jar
+      vec4 above = texture2D(uCells, (cell + vec2(0.5, 1.5)) / uGrid);
+      float surf = (fill < 0.999 || above.a < 0.001) ? smoothstep(0.35, 0.0, fill - fy) : 0.0;
+      sand += vec3(1.0, 0.95, 0.85) * surf * 0.25;                    // a lit crust along the top of the sand
+      if (g2 > 0.985) sand += vec3(1.0) * (0.3 + uHigh * 1.2) * (0.5 + 0.5 * sin(uTime * 7.0 + g * 40.0));   // glinting grains
+      col = sand;
+    }
+  }
+  gl_FragColor = vec4(col * uGain, 1.0);
+}
+</script>
+<script type="x-shader/x-vertex" id="sandPtVert">
+attribute vec2 aPos;
+attribute vec3 aCol;
+uniform float uPx;
+varying vec3 vCol;
+void main(){ gl_Position = vec4(aPos * 2.0 - 1.0, 0.0, 1.0); gl_PointSize = uPx; vCol = aCol; }
+</script>
+<script type="x-shader/x-fragment" id="sandPtFrag">
+precision highp float;
+varying vec3 vCol;
+uniform float uGain;
+void main(){ gl_FragColor = vec4(vCol * uGain, 1.0); }
+</script>
 <script type="x-shader/x-vertex" id="juliaVert">
 attribute vec2 aGrid;
 uniform mat4 uMVP;
@@ -9283,6 +9631,13 @@ uniform vec4  uMatte;            // Matte Black: x = on, y = lamp angle, z = lig
 uniform float uMatte2;           //     the bass lifting the sheen
 uniform vec4  uIR;               // Infrared film: x = on, y = strength, z = red halation, w = grain fizz
 uniform vec4  uUV;               // Blacklight poster: x = on, y = ink drift, z = glow pulse, w = UV strobe
+uniform vec4  uGlowR;            // Glow rays: x = on, y = bloom, z = ray length, w = ray strength
+uniform vec4  uCrum;             // Crumble: x = on, y = how far it has crumbled (0-1), z = grain size (pixels), w = edge shedding
+uniform vec4  uCone;             // Speaker cone: x = on, y = how deep the bulge, z = ring radius, w = ring strength
+uniform vec2  uCone2;            // Speaker cone: the shake
+uniform vec4  uSlice;            // Beat slices: x = on, y = strips, z = how far they jolt, w = which way each goes
+uniform vec4  uTri;              // Tri-colour print: x = on, y = ink set now, z = ink set next, w = how far the new print is pulled across
+uniform vec4  uTri2;             // Tri-colour print: x = shadow/mid cut, y = mid/highlight cut, z = how far the inks slip, w = the kick
 uniform vec4  uRiso;             // Risograph: x = on, y = misregistration (pixels), z = ink set (0-1), w = unused
 uniform vec4  uPen;              // Pencil shading: x = on, y = boil frame, z = hatching angle, w = the bass deepening the shading
 uniform vec4  uInk;              // Pen & ink: x = on, y = re-draw frame, z = ink (0 black fineliner, 1 blue biro), w = the bass
@@ -9387,6 +9742,25 @@ vec3 ccPal(float p, float k){
   else { s = vec3(0.06, 0.02, 0.08); m = vec3(0.95, 0.36, 0.66); h = vec3(0.76, 0.95, 1.00); }              // rose ice
   return k < 0.5 ? mix(s, m, k * 2.0) : mix(m, h, k * 2.0 - 1.0);
 }
+/* Tri-colour print: six sets of three flat screen-print inks (shadow, mid, highlight) */
+vec3 triInk(float s, float k){
+  vec3 a, b, c;
+  if (s < 0.5)      { a = vec3(0.09, 0.10, 0.20); b = vec3(0.89, 0.22, 0.27); c = vec3(0.95, 0.91, 0.84); }   // gig poster: navy, red, cream
+  else if (s < 1.5) { a = vec3(0.04, 0.17, 0.22); b = vec3(0.88, 0.48, 0.18); c = vec3(0.96, 0.90, 0.78); }   // teal, orange, sand
+  else if (s < 2.5) { a = vec3(0.15, 0.05, 0.23); b = vec3(0.80, 0.10, 0.40); c = vec3(0.84, 0.96, 0.26); }   // aubergine, magenta, acid lime
+  else if (s < 3.5) { a = vec3(0.07, 0.07, 0.07); b = vec3(0.76, 0.15, 0.18); c = vec3(0.91, 0.85, 0.71); }   // propaganda: black, red, beige
+  else if (s < 4.5) { a = vec3(0.03, 0.16, 0.23); b = vec3(0.16, 0.62, 0.56); c = vec3(0.91, 0.96, 0.86); }   // deep sea, jade, foam
+  else              { a = vec3(0.24, 0.05, 0.07); b = vec3(0.97, 0.50, 0.00); c = vec3(0.99, 0.75, 0.29); }   // sunset: oxblood, orange, gold
+  return k < 0.5 ? a : k < 1.5 ? b : c;
+}
+/* the picture printed in one set of three inks; each ink's screen sits slightly out of register when the inks slip */
+vec3 triPrint(float s, float lMid, float lHi){
+  float aa = 0.018;
+  vec3 o = triInk(s, 0.0);
+  o = mix(o, triInk(s, 1.0), smoothstep(uTri2.x - aa, uTri2.x + aa, lMid));
+  o = mix(o, triInk(s, 2.0), smoothstep(uTri2.y - aa, uTri2.y + aa, lHi));
+  return o;
+}
 /* Two-tone cycle: six pairs of contrasting colours */
 /* the six day-glo inks of a blacklight poster: hot pink, orange, yellow, green, cyan, violet */
 vec3 uvInk(float i){
@@ -9474,7 +9848,7 @@ float oblDepth(vec2 q){
 }
 void main(){
   vec2 uv = gl_FragCoord.xy / uRes;
-  if (uShimmer + uDroplets + uWarp + uSplit + uMelt + uBreathe + uTwist.x + uTilt.x + uStreak + uSpec.x + uLamb.x + uWard.x + uGooch.x + uCont.x + uCel.x + uIso.x + uObl.x + uBit.x + uVol.x + uGlass.x + uQSpin.x + uStain.x + uCells.x + uMarb.x + uSmoke.x + uCCyc.x + uLum.x + uSolar.x + uCC2.x + uSatP.x + uBleed.x + uSel.x + uOren.x + uSilv.x + uNoir.x + uDich.x + uTint.x + uMatte.x + uIR.x + uUV.x + uRiso.x + uPen.x + uInk.x + uSlit.x + uStut.x < 0.001 && uMix < 0.0 && uShock < 0.0){ gl_FragColor = texture2D(uTex, uv); return; }
+  if (uShimmer + uDroplets + uWarp + uSplit + uMelt + uBreathe + uTwist.x + uTilt.x + uStreak + uSpec.x + uLamb.x + uWard.x + uGooch.x + uCont.x + uCel.x + uIso.x + uObl.x + uBit.x + uVol.x + uGlass.x + uQSpin.x + uStain.x + uCells.x + uMarb.x + uSmoke.x + uCCyc.x + uLum.x + uSolar.x + uCC2.x + uSatP.x + uBleed.x + uSel.x + uOren.x + uSilv.x + uNoir.x + uDich.x + uTint.x + uMatte.x + uIR.x + uUV.x + uRiso.x + uPen.x + uInk.x + uSlit.x + uStut.x + uTri.x + uCone.x + uSlice.x + uGlowR.x + uCrum.x < 0.001 && uMix < 0.0 && uShock < 0.0){ gl_FragColor = texture2D(uTex, uv); return; }
   if (uBit.x > 0.5) uv = (floor(gl_FragCoord.xy / uBit.z) + 0.5) * uBit.z / uRes;   // 26: the whole picture in big square pixels
   /* Quantum Spin: the whole kaleidoscope pattern is turned, crawling one way while the picture inside it races the
      other (the wagon-wheel look). Each point is looked up at the matching place in its own slice nearest the
@@ -9509,6 +9883,38 @@ void main(){
     p = vec2(c * p.x - s * p.y, s * p.x + c * p.y);
     uv = p / vec2(asp, 1.0) + 0.5;
   }
+  /* Crumble: on a drop the picture breaks into grains that blow outwards, then fly back into place; between drops the
+     edges shed a few grains with the hi-hats */
+  float crumGone = 0.0;
+  if (uCrum.x > 0.5){
+    vec2 c = floor(gl_FragCoord.xy / uCrum.z), cq = c * uCrum.z / uRes;
+    float r = hash(c + 0.37);
+    vec2 dir = (cq - 0.5) * vec2(asp, 1.0) + (vec2(hash(c + 3.1), hash(c + 7.7)) - 0.5) * 0.5;
+    float p = uCrum.y * (0.55 + 0.9 * r);
+    uv -= dir * p * p * 0.55 / vec2(asp, 1.0);                         // each grain's picture carried outwards
+    crumGone = step(1.0 - uCrum.y * 0.75, r);                          // some grains are gone altogether at the height of it
+    float e = min(min(cq.x, 1.0 - cq.x), min(cq.y, 1.0 - cq.y));
+    if (e < 0.05 && hash(c + floor(uTime * 9.0)) < uCrum.w * (1.0 - e / 0.05)) crumGone = 1.0;   // the edges shedding
+  }
+  /* Speaker cone: the picture bulges out from the middle on every kick, like a speaker cone pushing out, and a ring
+     ripples outwards from it; the bass sets how deep the bulge goes, and a drop gives one big thump with a shake */
+  if (uCone.x > 0.5){
+    vec2 p = (uv - 0.5) * vec2(asp, 1.0) - uCone2.xy;
+    float r = length(p);
+    float bul = uCone.y * exp(-r * r * 3.2);                            // magnified in the middle, as if pushed towards you
+    float ring = exp(-pow((r - uCone.z) * 9.0, 2.0)) * uCone.w;
+    p = p * (1.0 - bul) - (r > 1e-4 ? p / r : vec2(0.0)) * ring * 0.035;
+    uv = (p + uCone2.xy) / vec2(asp, 1.0) + 0.5;
+  }
+  /* Beat slices: the picture cut into horizontal strips that jolt sideways on kicks and snares, then snap back; busier
+     music means more strips and bigger jolts, and a drop scrambles them all before they settle */
+  if (uSlice.x > 0.5){
+    float rows = uSlice.y, row = floor(uv.y * rows);
+    float h = hash(vec2(row, uSlice.w)), h2 = hash(vec2(row + 7.3, uSlice.w));
+    float amt = (h - 0.5) * 2.0 * uSlice.z * (h2 > 0.45 ? 1.0 : 0.25);
+    uv.x = fract(uv.x + amt);
+  }
+
   /* 14: shockwave - a ripple rings out from the centre, bending the picture as it passes */
   float shockRing = 0.0;
   if (uShock >= 0.0){
@@ -10278,6 +10684,42 @@ void main(){
     o *= 0.96 + 0.04 * hash(floor(gl_FragCoord.xy / 3.0) + 5.1);        // the paper's fibres
     col = o;
   }
+  /* Glow rays: the bright parts of the picture bloom with the bass and stream rays of light outwards on the kicks */
+  if (uGlowR.x > 0.5){
+    vec3 lw = vec3(0.299, 0.587, 0.114), acc = vec3(0.0), bl = vec3(0.0);
+    for (int k = 1; k <= 12; k++){
+      vec2 sp = st + (vec2(0.5) - st) * float(k) / 12.0 * uGlowR.z;
+      vec3 b = texture2D(uTex, sp).rgb;
+      acc += b * max(dot(b, lw) - 0.5, 0.0) * 2.0 * (1.0 - float(k) / 13.0);
+    }
+    vec2 px = 1.0 / uRes * max(1.0, uRes.y / 300.0) * 3.0;
+    for (int k = 0; k < 8; k++){
+      float a = float(k) * 0.785;
+      vec3 b = texture2D(uTex, st + vec2(cos(a), sin(a)) * px).rgb;
+      bl += b * max(dot(b, lw) - 0.45, 0.0) * 1.8;
+    }
+    col += acc / 12.0 * uGlowR.w * 3.0 + bl / 8.0 * uGlowR.y;
+  }
+  if (uCrum.x > 0.5) col *= 1.0 - crumGone * 0.92;
+  /* Tri-colour print: the picture cut into three flat inks (shadows, midtones, highlights), like a screen-printed gig
+     poster. The bass nudges the cuts so more of the picture rises into the brighter inks; on a drop the mid and
+     highlight screens slip out of register (Technicolor-style colour fringes) and a fresh set of inks is pulled
+     across left to right like a squeegee */
+  if (uTri.x > 0.5){
+    vec3 lw = vec3(0.299, 0.587, 0.114);
+    vec2 sl = vec2(uTri2.z * 0.010, uTri2.z * 0.004);
+    float lM = clamp(dot(texture2D(uTex, st + sl).rgb, lw), 0.0, 1.0);
+    float lH = clamp(dot(texture2D(uTex, st - sl * vec2(0.6, -1.6)).rgb, lw), 0.0, 1.0);
+    vec3 o = triPrint(uTri.y, lM, lH);
+    if (uTri.w > 0.0){
+      float edge = mix(-0.05, 1.05, uTri.w), wob = (hash(vec2(floor(st.y * 90.0), 3.7)) - 0.5) * 0.006;
+      o = mix(triPrint(uTri.z, lM, lH), o, smoothstep(edge - 0.004, edge + 0.004, st.x + wob));
+      o *= 1.0 - 0.35 * exp(-pow((st.x + wob - edge) / 0.005, 2.0)) * sin(uTri.w * 3.14159);   // the squeegee's wet edge
+    }
+    o *= 0.95 + 0.05 * hash(floor(gl_FragCoord.xy / 2.0) + 9.3);         // paper grain
+    o *= 1.0 + uTri2.w * 0.08;
+    col = o;
+  }
   /* Pencil shading: the picture redrawn in graphite on paper. Light parts are left as bare paper; the tones are built
      up in layers of cross-hatching (one direction for the mid-tones, crossing layers for the darks, a soft smudge for
      the very darkest), sketchy contour lines trace the edges, and the strokes re-draw a few times a second the way
@@ -10406,7 +10848,7 @@ void main(){
     scenes.julia  = scenes.lines;   // same effects pass, fed by the point cloud
     scenes.perlin = scenes.lines;   // likewise, fed by the Perlin Noise ball
     trail = program('trailFrag', ['uScene','uPrev','uRes','uTrail','uTwist']);
-    blit  = program('blitFrag',  ['uTex','uRes','uTime','uHigh','uBass','uShimmer','uDroplets','uDrop','uSnap','uWarp','uWarpPh','uSplit','uMelt','uMix','uBreathe','uShock','uTwist','uTilt','uStreak','uSpec','uHue2','uLamb','uWard','uWard2','uGooch','uGooch2','uCont','uCel','uIso','uIso2','uIsoTex','uObl','uBit','uVol','uVol2','uGlass','uOrb','uQSpin','uStain','uStain2','uCells','uCells2','uMarb','uSmoke','uCCyc','uCCyc2','uLum','uSolar','uCC2','uSatP','uBleed','uBleed2','uSel','uOren','uOren2','uSilv','uNoir','uDich','uDich2','uTint','uMatte','uMatte2','uIR','uUV','uRiso','uPen','uInk','uHist','uHistI','uHistT','uSlit','uStut','uStut2']);
+    blit  = program('blitFrag',  ['uTex','uRes','uTime','uHigh','uBass','uShimmer','uDroplets','uDrop','uSnap','uWarp','uWarpPh','uSplit','uMelt','uMix','uBreathe','uShock','uTwist','uTilt','uStreak','uSpec','uHue2','uLamb','uWard','uWard2','uGooch','uGooch2','uCont','uCel','uIso','uIso2','uIsoTex','uObl','uBit','uVol','uVol2','uGlass','uOrb','uQSpin','uStain','uStain2','uCells','uCells2','uMarb','uSmoke','uCCyc','uCCyc2','uLum','uSolar','uCC2','uSatP','uTri','uTri2','uCone','uCone2','uSlice','uGlowR','uCrum','uBleed','uBleed2','uSel','uOren','uOren2','uSilv','uNoir','uDich','uDich2','uTint','uMatte','uMatte2','uIR','uUV','uRiso','uPen','uInk','uHist','uHistI','uHistT','uSlit','uStut','uStut2']);
     isoSm = program('isoSmooth', ['uCur','uPrev','uK','uPx']);
   } catch (e){ chip.textContent = 'Shader error'; console.error(e); return; }
 
@@ -10452,7 +10894,7 @@ void main(){
   }
 
   /* ---------- background picker ---------- */
-  var BG_NAMES = { vriver:'Vertex River', mobius:'Möbius Cells', vliq:'Viscous Liquid', hcube:'Holographic Rubik’s', goo:'Gooey Orb', tend:'Bioluminescent Tendrils', holo:'Holographic Attractor', sea:'Seahorse Valley', iloop:'Infinity Loop', dish:'Parabolic Reflector', snova:'Supernova', gwave:'Gravitational Wave', starb:'Starburst Aperture', cosmic:'Cosmic Descent', sakura:'Sakura Teleidoscope', teleid:'Teleidoscope', kscope:'Kaleidoscope', vdisp:'Vertex Descent', amberc:'Amber Core', msphere:'Morphing Sphere', noxfire:'Nox Fire Vertex', eflow:'Particle Cloud', vcanvas:'Vertex Canvas', strata:'Strata Layers', vortex:'Vortex Ocean', vocean:'Vertex Ocean', matrix:'Matrix Attractor', svgAfterglow:'SVG Afterglow', svgBloom:'SVG Bloom', svgOrbit:'SVG Orbit', svgRipple:'SVG Ripple', manifold:'Manifold Mandala', perlin:'Perlin Noise', wave:'Wave Field', radio:'Radio Storm', darkcity:'Dark City', ocean:'Ocean', village:'Neon Village', fireSpec:'Fire Quartz Spectrum', tunnel:'Fractal Tunnel', tree:'Fractal Tree', hyper:'Hyperspace Tunnel', deep:'Deep Sea Fractal', lines:'Line Fractals', julia:'Vertex Shader', sphere:'Spherical Fractal', disc:'Discovery', ifs:'IFS Fractal', pistil:'Pistil', bulb:'Mandelbulb', fire:'Fire Quartz', neon:'Neon Kaleidoscope', thing:'The Thing', milk:'Milkdrop Feedback', mandala:'Spectrum Mandala', liquid:'Liquid Light Show', turing:'Turing Garden', spiral:'Fractal Animations', tentacle:'Tentacle Fractal Tree' };
+  var BG_NAMES = { mypic:'My Picture', sand:'Sand Spectrum', shz:'Spectrum Horizon', ridge:'Spectral Ridges', pinf:'Pin Field', vriver:'Vertex River', mobius:'Möbius Cells', vliq:'Viscous Liquid', hcube:'Holographic Rubik’s', goo:'Gooey Orb', tend:'Bioluminescent Tendrils', holo:'Holographic Attractor', sea:'Seahorse Valley', iloop:'Infinity Loop', dish:'Parabolic Reflector', snova:'Supernova', gwave:'Gravitational Wave', starb:'Starburst Aperture', cosmic:'Cosmic Descent', sakura:'Sakura Teleidoscope', teleid:'Teleidoscope', kscope:'Kaleidoscope', vdisp:'Vertex Descent', amberc:'Amber Core', msphere:'Morphing Sphere', noxfire:'Nox Fire Vertex', eflow:'Particle Cloud', vcanvas:'Vertex Canvas', strata:'Strata Layers', vortex:'Vortex Ocean', vocean:'Vertex Ocean', matrix:'Matrix Attractor', svgAfterglow:'SVG Afterglow', svgBloom:'SVG Bloom', svgOrbit:'SVG Orbit', svgRipple:'SVG Ripple', manifold:'Manifold Mandala', perlin:'Perlin Noise', wave:'Wave Field', radio:'Radio Storm', darkcity:'Dark City', ocean:'Ocean', village:'Neon Village', fireSpec:'Fire Quartz Spectrum', tunnel:'Fractal Tunnel', tree:'Fractal Tree', hyper:'Hyperspace Tunnel', deep:'Deep Sea Fractal', lines:'Line Fractals', julia:'Vertex Shader', sphere:'Spherical Fractal', disc:'Discovery', ifs:'IFS Fractal', pistil:'Pistil', bulb:'Mandelbulb', fire:'Fire Quartz', neon:'Neon Kaleidoscope', thing:'The Thing', milk:'Milkdrop Feedback', mandala:'Spectrum Mandala', liquid:'Liquid Light Show', turing:'Turing Garden', spiral:'Fractal Animations', tentacle:'Tentacle Fractal Tree' };
   var firstBg = document.querySelector('.bg-list [data-bg]');
   var bg = firstBg ? firstBg.getAttribute('data-bg') : 'tunnel';      // the first in the list (alphabetical) unless one was picked before
   try { var sb = localStorage.getItem('tripLabBg'); if (BG_NAMES[sb]) bg = sb; } catch (e){}
@@ -10461,7 +10903,7 @@ void main(){
   function syncBg(){
     bgBtns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-bg') === bg)); });
     bgName.textContent = BG_NAMES[bg];
-    var vp = document.getElementById('vliqPic'); if (vp) vp.hidden = bg !== 'vliq';   // Viscous Liquid's own picture controls
+    var vp = document.getElementById('vliqPic'); if (vp) vp.hidden = bg !== 'vliq'; var rp = document.getElementById('ridgePic'); if (rp) rp.hidden = bg !== 'ridge'; var mp = document.getElementById('mypicPic'); if (mp) mp.hidden = bg !== 'mypic';   // Viscous Liquid's own picture controls
   }
   bgBtns.forEach(function(b){
     b.addEventListener('click', function(){
@@ -10475,7 +10917,7 @@ void main(){
 
   /* ---------- effect toggles ---------- */
   var fx = {};
-  var FX = ['trails','wobble','drops','symmetry','bands','spin','shimmer','droplets','morph','split','melt','journey','breathe','shock','twist','tilt','streak','spectrum','lambert','ward','gooch','contours','cel','iso','oblique','pico','onebit','cga','c64','vol','glass','spin3','spin5','stained','cells','marble','smoke','ccycle','lum','solar','ccycle2','satpulse','bleed','selcol','oren','silver','noir','dichroic','bluetint','matte','infrared','blacklight','riso','pencil','penink','slitscan','stutter'];
+  var FX = ['trails','wobble','drops','symmetry','bands','spin','shimmer','droplets','morph','split','melt','journey','breathe','shock','twist','tilt','streak','spectrum','lambert','ward','gooch','contours','cel','iso','oblique','pico','onebit','cga','c64','vol','glass','spin3','spin5','stained','cells','marble','smoke','ccycle','lum','solar','ccycle2','satpulse','tricolour','cone','slices','glowrays','crumble','bleed','selcol','oren','silver','noir','dichroic','bluetint','matte','infrared','blacklight','riso','pencil','penink','slitscan','stutter'];
   function saveFx(){ try { localStorage.setItem('tripLabFx2', JSON.stringify(fx)); } catch (e){} }
   var savedFx = null;
   try { savedFx = JSON.parse(localStorage.getItem('tripLabFx2') || 'null'); } catch (e){}
@@ -10504,9 +10946,22 @@ void main(){
     return true;
   }
 
+  /* Trip mode: the Dashboard's Player is the music. window.parent.tripHost() hands over its audio context,
+     an analyser on the Player's sound and a playing() check; the visuals start and stop with the Player. */
+  var host = null;
+  function attachHost(){
+    if (host || !window.TRIP_EMBED) return !!host;
+    try { host = window.parent.tripHost && window.parent.tripHost(); } catch (e){ host = null; }
+    if (!host || !host.analyser) { host = null; return false; }
+    actx = host.ctx; analyser = host.analyser; freq = new Uint8Array(analyser.frequencyBinCount);
+    return true;
+  }
+  function hostPlaying(){ try { return !!(host && host.playing()); } catch (e){ return false; } }
+  function isPlaying(){ return liveOn || (!!audioEl && !audioEl.paused) || hostPlaying(); }
+
   function avg(a, b){ var s = 0; for (var i = a; i <= b; i++) s += freq[i]; return s / ((b - a + 1) * 255); }
   function trackStep(){
-    if (!analyser || !(liveOn || (audioEl && !audioEl.paused))) return { bass:0, mid:0, high:0 };
+    if (!analyser || !isPlaying()) return { bass:0, mid:0, high:0 };
     analyser.getByteFrequencyData(freq);
     return {
       bass: Math.max(0, (avg(1, 3) - 0.35) / 0.65),
@@ -10517,7 +10972,7 @@ void main(){
 
   var playBtn = document.getElementById('playBtn'), trackName = document.getElementById('trackName');
   function onPlayState(){
-    var playing = liveOn || (!!audioEl && !audioEl.paused);
+    var playing = isPlaying();
     playBtn.textContent = audioEl && !audioEl.paused ? 'Pause' : 'Play';
     setLive(playing);
   }
@@ -10669,6 +11124,44 @@ void main(){
 
   /* ---------- per-frame state ---------- */
   var bands = { bass:0, mid:0, high:0 };
+
+  /* Adaptive listening: compares the sound with the track's own recent average, in decibels from the analyser's
+     unclipped readings, so loud, heavily compressed tracks whose levels sit near the top all the time still give kicks,
+     snares and moving heights. adapt.bass / .mid / .high each give lvl (0-1, around the track's own average: 0.5 is
+     "as loud as it has been lately") and hit (true on the frame a kick, snare or hi-hat lands); adapt.db holds the
+     latest decibel reading of every frequency bin, for the pin fields' running pictures of the sound */
+  var adapt = { db:null, t:0, bass:{ lvl:0, hit:false }, mid:{ lvl:0, hit:false }, high:{ lvl:0, hit:false } };
+  (function(){
+    var R = { bass:[1, 3], mid:[4, 30], high:[31, 120] }, S = {};
+    for (var k in R) S[k] = { fast:-80, avg:-80, dev:2, prev:-80, armed:true, cool:0, init:false, peak:-80, age:0 };
+    adapt.step = function(dt){
+      for (var k0 in R) adapt[k0].hit = false;
+      if (!analyser || !analyser.getFloatFrequencyData) return;
+      var n = analyser.frequencyBinCount;
+      if (!adapt.db || adapt.db.length !== n) adapt.db = new Float32Array(n);
+      analyser.getFloatFrequencyData(adapt.db);
+      var live = bands.bass + bands.mid + bands.high > 0.02;
+      for (var k in R){
+        var r = R[k], s = S[k], sum = 0, c = 0;
+        for (var i = r[0]; i <= r[1] && i < n; i++){ var v = adapt.db[i]; if (v > -140){ sum += v; c++; } }
+        var e = c ? sum / c : -140;
+        if (!s.init && live){ s.fast = s.avg = s.prev = s.peak = e; s.init = true; }
+        if (s.init) s.age += dt;
+        var ra = Math.min(1, dt * (s.age < 1.5 ? 4 : 0.7));            // settles quickly when a track starts
+        s.fast += (e - s.fast) * Math.min(1, dt * 30);
+        s.avg += (s.fast - s.avg) * ra;                                    // the track's level over the last second or two
+        s.dev += (Math.abs(s.fast - s.avg) - s.dev) * ra; if (s.dev < 1) s.dev = 1;
+        adapt[k].lvl = live ? Math.max(0, Math.min(1, 0.5 + (s.fast - s.avg) / (s.dev * 3))) : 0;
+        var over = s.fast - s.avg;
+        s.cool -= dt;
+        if (!s.armed){ s.peak = Math.max(s.peak, s.fast); if (s.fast < s.peak - Math.max(1, s.dev * 0.5) || over < s.dev * 0.3) s.armed = true; }   // ready again once the last hit has fallen back
+        if (live && s.armed && s.cool <= 0 && over > Math.max(1.2, s.dev * 0.9) && s.fast > s.prev){
+          adapt[k].hit = true; s.armed = false; s.peak = s.fast; s.cool = k === 'bass' ? 0.18 : 0.12;
+        }
+        s.prev = s.fast;
+      }
+    };
+  })();
   function env(c, t){ return c + (t - c) * (t > c ? 0.5 : 0.08); }
   var time = 0, travel = 0, flash = 0, surge = 0, hue = 0, hueTarget = 0;
   var drift = 0, spinAngle = 0, rollOffset = 0, rollTarget = 0, spinDir = 1, sectors = 6, symTimer = 0, quiet = 0, dropShow = 0;
@@ -10693,7 +11186,7 @@ void main(){
   }
   function onDrop(){
     dropShow = 1.4;
-    milkDir *= -1; turingDrop = 1; tentacleRegrow = 1; warpJump = 1; journeyDrop = 1; shockDrop = 1; lambDrop = 1; wardDrop = 1; goochDrop = 1; contDrop = 1; celDrop = 1; isoDrop = 1; oblDrop = 1; bitDrop = 1; volDrop = 1; glassDrop = 1; stainDrop = 1; cellsDrop = 1; marbDrop = 1; smokeDrop = 1; ccycDrop = 1; lumDrop = 1; solarDrop = 1; cc2Drop = 1; satDrop = 1; bleedDrop = 1; selDrop = 1; orenDrop = 1; silvDrop = 1; noirDrop = 1; dichDrop = 1; tintDrop = 1; matteDrop = 1; irDrop = 1; uvDrop = 1; risoDrop = 1; penDrop = 1; inkDrop = 1; slitDrop = 1; stutDrop = 1; if (bg === 'ocean') oceanJump = 1; if (bg === 'wave') waveDrop = 1; if (bg === 'radio') radioDrop = 1; if (bg === 'perlin') perlinDrop = 1; if (bg === 'manifold') manifoldDrop = 1; if (SVG_LOOPS[bg]) svgLoopDrop = 1; if (bg === 'matrix') matrixDrop = 1; if (bg === 'vocean') voceanDrop = 1; if (bg === 'vortex') vortexDrop = 1; if (bg === 'strata') strataDrop = 1; if (bg === 'vcanvas') vcanvasDrop = 1; if (bg === 'eflow') eflowDrop = 1; if (bg === 'noxfire') noxDrop = 1; if (bg === 'msphere') msphereDrop = 1; if (bg === 'amberc') amberDrop = 1; if (bg === 'vdisp') vdispDrop = 1; if (bg === 'kscope') kscopeDrop = 1; if (bg === 'teleid') teleidDrop = 1; if (bg === 'sakura') sakuraDrop = 1; if (bg === 'cosmic') cosmicDrop = 1; if (bg === 'starb') starbDrop = 1; if (bg === 'gwave') gwaveDrop = 1; if (bg === 'snova') snovaDrop = 1; if (bg === 'dish') dishDrop = 1; if (bg === 'iloop') iloopDrop = 1; if (bg === 'sea') seaDrop = 1; if (bg === 'holo') holoDrop = 1; if (bg === 'tend') tendDrop = 1; if (bg === 'goo') gooDrop = 1; if (bg === 'hcube') hcubeDrop = 1; if (bg === 'vliq') vliqDrop = 1; if (bg === 'mobius') mobiusDrop = 1; if (bg === 'vriver') vriverDrop = 1;            // Milkdrop reverses its spin, Turing Garden seeds a burst
+    milkDir *= -1; turingDrop = 1; tentacleRegrow = 1; warpJump = 1; journeyDrop = 1; shockDrop = 1; lambDrop = 1; wardDrop = 1; goochDrop = 1; contDrop = 1; celDrop = 1; isoDrop = 1; oblDrop = 1; bitDrop = 1; volDrop = 1; glassDrop = 1; stainDrop = 1; cellsDrop = 1; marbDrop = 1; smokeDrop = 1; ccycDrop = 1; lumDrop = 1; solarDrop = 1; cc2Drop = 1; triDrop = 1; coneDrop = 1; sliceDrop = 1; glowDrop = 1; crumDrop = 1; satDrop = 1; bleedDrop = 1; selDrop = 1; orenDrop = 1; silvDrop = 1; noirDrop = 1; dichDrop = 1; tintDrop = 1; matteDrop = 1; irDrop = 1; uvDrop = 1; risoDrop = 1; penDrop = 1; inkDrop = 1; slitDrop = 1; stutDrop = 1; if (bg === 'ocean') oceanJump = 1; if (bg === 'wave') waveDrop = 1; if (bg === 'radio') radioDrop = 1; if (bg === 'perlin') perlinDrop = 1; if (bg === 'manifold') manifoldDrop = 1; if (SVG_LOOPS[bg]) svgLoopDrop = 1; if (bg === 'matrix') matrixDrop = 1; if (bg === 'vocean') voceanDrop = 1; if (bg === 'vortex') vortexDrop = 1; if (bg === 'strata') strataDrop = 1; if (bg === 'vcanvas') vcanvasDrop = 1; if (bg === 'eflow') eflowDrop = 1; if (bg === 'noxfire') noxDrop = 1; if (bg === 'msphere') msphereDrop = 1; if (bg === 'amberc') amberDrop = 1; if (bg === 'vdisp') vdispDrop = 1; if (bg === 'kscope') kscopeDrop = 1; if (bg === 'teleid') teleidDrop = 1; if (bg === 'sakura') sakuraDrop = 1; if (bg === 'cosmic') cosmicDrop = 1; if (bg === 'starb') starbDrop = 1; if (bg === 'gwave') gwaveDrop = 1; if (bg === 'snova') snovaDrop = 1; if (bg === 'dish') dishDrop = 1; if (bg === 'iloop') iloopDrop = 1; if (bg === 'sea') seaDrop = 1; if (bg === 'holo') holoDrop = 1; if (bg === 'tend') tendDrop = 1; if (bg === 'goo') gooDrop = 1; if (bg === 'hcube') hcubeDrop = 1; if (bg === 'vliq') vliqDrop = 1; if (bg === 'mobius') mobiusDrop = 1; if (bg === 'vriver') vriverDrop = 1; if (bg === 'pinf') pinfDrop = 1; if (bg === 'ridge') ridgeDrop = 1; if (bg === 'shz') shzDrop = 1; if (bg === 'sand') sandDrop = 1;            // Milkdrop reverses its spin, Turing Garden seeds a burst
     if (fx.drops){ flash = 1; surge = 1; hueTarget += 0.5; rollTarget += Math.PI; }
     if (fx.spin || fx.spin3 || fx.spin5) spinDir *= -1;
     if (fx.symmetry) nextSymmetry();
@@ -14538,6 +15031,638 @@ void main(){
       })();
     } catch (e){ if (window.console) console.error('Vertex River background', e); }
 
+    /* ---------- Pin Field (original, made for this lab): an endless field of pins, chrome stems with glowing glass heads,
+       crept over from low down. Like Viscous Liquid's pins without the liquid, the field is a running picture of the sound;
+       each kick drops a ripple somewhere ahead, and a drop rolls a great swell towards you with a flash and a new palette. ---------- */
+    var pinfArt = null, pinfDrop = 0;
+    try {
+      scenes.pinf = scenes.village;                                     // shown through the same effects
+      pinfArt = (function(){
+        var ready = false, failed = false, kp, target = null, tw = 0, th = 0, last = 0, startT = 0;
+        var bass = 0, mid = 0, high = 0, kick = 0, prevB = 0, flash = 0, camZ = 0, camT = 0, palA = 0, palB = 1, palP = 0, palHold = 0;
+        var rips = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], ripN = 0, prevM = 0, ripGap = 0, wave = [0, 0], waveOn = false;
+        var FOCAL = 1 / Math.tan(30 * Math.PI / 180);
+        /* the sound for the pins: 64 bands on a musical scale, one row every 1/24 s into a 64-row ring buffer */
+        var specTex = null, specRow = new Uint8Array(64), specSm = new Float32Array(64), specHead = 0, specAcc = 0, sLo = [], sHi = [];
+        for (var bi = 0; bi < 64; bi++){ sLo[bi] = Math.max(1, Math.floor(Math.pow(2, bi / 64 * 7.6))); sHi[bi] = Math.max(sLo[bi], Math.floor(Math.pow(2, (bi + 1) / 64 * 7.6)) - 1); }
+        function specStep(dt){
+          if (!specTex){
+            specTex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, specTex);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.LUMINANCE, 64, 64, 0, gl.LUMINANCE, gl.UNSIGNED_BYTE, new Uint8Array(64 * 64));
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+          }
+          var on = typeof freq !== 'undefined' && freq && (bands.bass + bands.mid + bands.high) > 0.001;   // freq is read each frame by the music meter
+          for (var i = 0; i < 64; i++){
+            var tg = 0;
+            if (on){ var sm = 0; for (var j = sLo[i]; j <= sHi[i]; j++) sm += freq[j]; tg = Math.min(1, Math.max(0, sm / ((sHi[i] - sLo[i] + 1) * 255) * (0.75 + i / 64 * 1.3) - 0.12) * 1.25); }
+            specSm[i] += (tg - specSm[i]) * Math.min(1, dt * (tg > specSm[i] ? 30 : 7));   // quick to rise, slower to sink
+          }
+          specAcc += dt;
+          if (specAcc >= 1 / 24){
+            specAcc = Math.min(specAcc - 1 / 24, 0.1);
+            specHead = (specHead + 1) % 64;
+            for (i = 0; i < 64; i++) specRow[i] = Math.round(specSm[i] * 255);
+            gl.bindTexture(gl.TEXTURE_2D, specTex);
+            gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, specHead, 64, 1, gl.LUMINANCE, gl.UNSIGNED_BYTE, specRow);
+          }
+        }
+        var NAMES = ['uRes', 'uCam', 'uFwd', 'uRight', 'uUp', 'uFocal', 'uHead', 'uLift', 'uBass', 'uHigh', 'uKick', 'uFlash', 'uGain', 'uTime',
+                     'uSpec', 'uRip0', 'uRip1', 'uRip2', 'uRip3', 'uRip4', 'uRip5', 'uWave', 'uPal'];
+        function draw(){
+          if (failed) return;
+          if (!ready){ try { kp = program('pinfFrag', NAMES); startT = performance.now(); ready = true; } catch (e){ failed = true; if (window.console) console.error('Pin Field could not start', e); return; } }
+          if (!target || tw !== W || th !== H){ if (target) freeTarget(target); target = makeTarget(W, H); tw = W; th = H; }
+          var now = performance.now(), dt = last ? Math.min(0.1, (now - last) / 1000) : 1 / 60; last = now;
+          bass += (bands.bass - bass) * Math.min(1, dt * 8);
+          mid += (bands.mid - mid) * Math.min(1, dt * 4);
+          high += (bands.high - high) * Math.min(1, dt * 6);
+          specStep(dt);
+          /* the camera creeps forward, a little quicker with the mids and with a nudge on each kick */
+          camZ += dt * (0.9 + mid * 0.9 + kick * 1.6); camT += dt;
+          var cx = Math.sin(camT * 0.05) * 5 + Math.sin(camT * 0.013) * 9;
+          /* a kick drops a big ripple somewhere ahead, and a snare or busy mids a smaller one, so there are nearly always
+             rings spreading across the field */
+          function addRip(x, z, a){ rips[ripN] = [x, z, 0, a]; ripN = (ripN + 1) % 6; }
+          ripGap -= dt;
+          if (bands.bass > 0.55 && prevB <= 0.55){
+            kick = 1;
+            addRip(cx + (Math.random() - 0.5) * 16, camZ + 7 + Math.random() * 20, 1.9 + bass * 1.4); ripGap = 0.25;
+          } else if (bands.mid > 0.5 && prevM <= 0.5 && ripGap <= 0){
+            addRip(cx + (Math.random() - 0.5) * 22, camZ + 9 + Math.random() * 26, 1.1 + mid * 0.9); ripGap = 0.35;
+          }
+          prevB = bands.bass; prevM = bands.mid;
+          kick *= Math.exp(-dt * 5);
+          for (var k = 0; k < 6; k++){ rips[k][2] += dt * 7.5; rips[k][3] *= Math.exp(-dt * 0.6); if (rips[k][2] > 60) rips[k][3] = 0; }
+          /* a drop: a great swell rolls in from the distance, the heads flash and the palette turns to the next */
+          if (pinfDrop){
+            wave = [camZ + 64, 3.4]; waveOn = true; flash = 1; kick = 1;
+            for (var dk = 0; dk < 3; dk++) addRip(cx + (dk - 1) * 9, camZ + 12 + dk * 6, 2.4);   // and a burst of ripples
+            if (palP <= 0){ palP = 0.0001; palB = (palA + 1) % 4; }
+            palHold = 0; pinfDrop = 0;
+          }
+          if (waveOn){ wave[0] -= dt * 24; if (wave[0] < camZ - 6) waveOn = false; } else wave[1] = 0;
+          flash *= Math.exp(-dt * 3);
+          if (palP <= 0){ palHold += dt; if (palHold > 60){ palHold = 0; palP = 0.0001; palB = (palA + 1) % 4; } }   // a new palette every minute anyway
+          else { palP += dt / 2.5; if (palP >= 1){ palP = 0; palA = palB; } }
+          var yaw = Math.sin(camT * 0.037) * 0.12 + Math.cos(camT * 0.05) * 0.05, pit = 0.24 + Math.sin(camT * 0.021) * 0.04, cp = Math.cos(pit);
+          var f = [Math.sin(yaw) * cp, -Math.sin(pit), Math.cos(yaw) * cp], r = [Math.cos(yaw), 0, -Math.sin(yaw)];
+          var up = [f[1] * r[2] - f[2] * r[1], f[2] * r[0] - f[0] * r[2], f[0] * r[1] - f[1] * r[0]];
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.fb);
+          gl.viewport(0, 0, W, H);
+          gl.useProgram(kp.p);
+          var u = kp.u;
+          gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, specTex); gl.uniform1i(u.uSpec, 0);
+          gl.uniform2f(u.uRes, W, H);
+          gl.uniform3f(u.uCam, cx, 4.4 + bass * 0.35, camZ);
+          gl.uniform3f(u.uFwd, f[0], f[1], f[2]); gl.uniform3f(u.uRight, r[0], r[1], r[2]); gl.uniform3f(u.uUp, up[0], up[1], up[2]);
+          gl.uniform1f(u.uFocal, FOCAL); gl.uniform1f(u.uHead, specHead);
+          gl.uniform1f(u.uLift, 2.0 + bass * 0.7 + kick * 0.4);
+          gl.uniform1f(u.uBass, bass); gl.uniform1f(u.uHigh, high); gl.uniform1f(u.uKick, kick); gl.uniform1f(u.uFlash, flash);
+          gl.uniform1f(u.uGain, Math.min(1, (now - startT) / 1200)); gl.uniform1f(u.uTime, camT);
+          gl.uniform4f(u.uRip0, rips[0][0], rips[0][1], rips[0][2], rips[0][3]); gl.uniform4f(u.uRip1, rips[1][0], rips[1][1], rips[1][2], rips[1][3]);
+          gl.uniform4f(u.uRip2, rips[2][0], rips[2][1], rips[2][2], rips[2][3]); gl.uniform4f(u.uRip3, rips[3][0], rips[3][1], rips[3][2], rips[3][3]);
+          gl.uniform4f(u.uRip4, rips[4][0], rips[4][1], rips[4][2], rips[4][3]); gl.uniform4f(u.uRip5, rips[5][0], rips[5][1], rips[5][2], rips[5][3]);
+          gl.uniform2f(u.uWave, wave[0], waveOn ? wave[1] : 0);
+          gl.uniform3f(u.uPal, palA, palB, palP > 0 ? palP * palP * (3 - 2 * palP) : 0);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+          gl.viewport(0, 0, W, H);
+        }
+        return { draw:draw, tex:function(){ return target && target.tex; } };
+      })();
+    } catch (e){ if (window.console) console.error('Pin Field background', e); }
+
+    /* ---------- Spectral Ridges (original, made for this lab): the sound as a landscape of fine glowing lines. Every
+       thirtieth of a second the spectrum is laid down as a new ridge line at the front (bass on the left, highs on the
+       right) and the older ridges recede into the dark, so the music builds a mountain range of its recent past. The
+       nearest ridges trail fine hairs down to the floor and dust drifts beneath them; the tallest peaks burn white.
+       Kicks flash the front ridges, the mids ripple the range, and a drop flashes it all and turns the colours. ---------- */
+    var ridgeArt = null, ridgeDrop = 0;
+    try {
+      scenes.ridge = scenes.village;                                    // shown through the same effects
+      ridgeArt = (function(){
+        var ready = false, failed = false, pp, pu = {}, vb, hb, blurP, finP, glBuf = null;
+        var tS = null, tG1 = null, tG2 = null, outT = null, fw = 0, fh = 0;
+        var C = 220, R = 76, HAIR = 14, DZ = 0.19;
+        var hist = [], head = 0, acc = 0, rnd = new Float32Array(R * C), verts = new Float32Array(R * C * 5), hair = new Float32Array(HAIR * C * 2 * 5);
+        var last = 0, tt = 0, hue = 0, hueTo = 0, flash = 0, kick = 0, prevB = 0, bass = 0, mid = 0, high = 0, startT = 0, rowN = 0, runMax = 0.3, rate = 30;
+        /* the sound: 64 bands on a musical scale, smoothed */
+        var spec = new Float32Array(64), sLo = [], sHi = [];
+        for (var bi = 0; bi < 64; bi++){ sLo[bi] = Math.max(1, Math.floor(Math.pow(2, bi / 64 * 7.6))); sHi[bi] = Math.max(sLo[bi], Math.floor(Math.pow(2, (bi + 1) / 64 * 7.6)) - 1); }
+        /* your own picture in place of the black: scaled down to at most 2048 px and kept on this device */
+        var pic = null, picTex = null, picAsp = 1, picDirty = false, picP = null;
+        function setPicture(img, save){
+          var k = Math.min(1, 2048 / Math.max(img.naturalWidth || img.width, img.naturalHeight || img.height));
+          var c = document.createElement('canvas'); c.width = Math.max(1, Math.round((img.naturalWidth || img.width) * k)); c.height = Math.max(1, Math.round((img.naturalHeight || img.height) * k));
+          c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+          pic = c; picAsp = c.width / c.height; picDirty = true;
+          if (save){
+            try { localStorage.setItem('ridgePicture', c.toDataURL('image/jpeg', 0.88)); }
+            catch (e){
+              try { var c2 = document.createElement('canvas'), k2 = 1280 / Math.max(c.width, c.height); c2.width = Math.round(c.width * Math.min(1, k2)); c2.height = Math.round(c.height * Math.min(1, k2)); c2.getContext('2d').drawImage(c, 0, 0, c2.width, c2.height); localStorage.setItem('ridgePicture', c2.toDataURL('image/jpeg', 0.8)); }
+              catch (e2){ try { localStorage.removeItem('ridgePicture'); } catch (e3){} }
+            }
+          }
+        }
+        function clearPicture(){
+          pic = null; picDirty = false;
+          if (picTex){ gl.deleteTexture(picTex); picTex = null; }
+          try { localStorage.removeItem('ridgePicture'); localStorage.removeItem('ridgePictureName'); } catch (e){}
+        }
+        for (var r0 = 0; r0 < R; r0++){ hist.push(new Float32Array(C)); }
+        for (var q = 0; q < R * C; q++) rnd[q] = Math.random();
+        function tgt(w, h){ var t = makeTarget(w, h); t.w = w; t.h = h; return t; }
+        function init(){
+          vb = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, vb); gl.bufferData(gl.ARRAY_BUFFER, verts.byteLength, gl.DYNAMIC_DRAW);
+          hb = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, hb); gl.bufferData(gl.ARRAY_BUFFER, hair.byteLength, gl.DYNAMIC_DRAW);
+          gl.bindBuffer(gl.ARRAY_BUFFER, glBuf);
+          pp = gl.createProgram();
+          gl.attachShader(pp, compile(gl.VERTEX_SHADER, document.getElementById('ridgeVert').textContent));
+          gl.attachShader(pp, compile(gl.FRAGMENT_SHADER, document.getElementById('ridgeFrag').textContent));
+          gl.bindAttribLocation(pp, 0, 'aPos'); gl.bindAttribLocation(pp, 1, 'aRnd');
+          gl.linkProgram(pp);
+          if (!gl.getProgramParameter(pp, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(pp));
+          ['uVP','uMode','uHue','uPx','uFlash','uGain','uWidth'].forEach(function(k){ pu[k] = gl.getUniformLocation(pp, k); });
+          picP = program('ridgePicFrag', ['uTex','uRes','uAsp','uDim']);
+          blurP = program('matrixBlur', ['uTex','uRes','uDir','uGain']);
+          finP = program('voceanFinal', ['uScene','uGlow','uRes','uGlowAmt']);
+          startT = performance.now();
+          ready = true;
+        }
+        function sizeTo(w, h){
+          if (w === fw && h === fh) return;
+          fw = w; fh = h;
+          [tS, tG1, tG2, outT].forEach(function(t){ if (t) freeTarget(t); });
+          var qw = Math.max(2, w >> 2), qh = Math.max(2, h >> 2);
+          tS = tgt(w, h); tG1 = tgt(qw, qh); tG2 = tgt(qw, qh); outT = tgt(w, h);
+        }
+        function blur(src, dst, dx, dy){
+          gl.bindFramebuffer(gl.FRAMEBUFFER, dst.fb); gl.viewport(0, 0, dst.w, dst.h);
+          gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, src.tex); gl.uniform1i(blurP.u.uTex, 0);
+          gl.uniform2f(blurP.u.uRes, dst.w, dst.h); gl.uniform2f(blurP.u.uDir, dx / dst.w, dy / dst.h);
+          gl.uniform1f(blurP.u.uGain, 1);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        }
+        function persp(fovy, aspect, near, far){ var f = 1 / Math.tan(fovy / 2), nf = 1 / (near - far); return [f / aspect,0,0,0, 0,f,0,0, 0,0,(far + near) * nf,-1, 0,0,2 * far * near * nf,0]; }
+        function mul(a, b){ var o = new Array(16); for (var c = 0; c < 4; c++) for (var r = 0; r < 4; r++) o[c*4+r] = a[r]*b[c*4] + a[4+r]*b[c*4+1] + a[8+r]*b[c*4+2] + a[12+r]*b[c*4+3]; return o; }
+        function lookAt(e, t){
+          var f = [t[0] - e[0], t[1] - e[1], t[2] - e[2]], l = Math.hypot(f[0], f[1], f[2]); f = [f[0] / l, f[1] / l, f[2] / l];
+          var s = [-f[2], 0, f[0]]; l = Math.hypot(s[0], s[1], s[2]); s = [s[0] / l, s[1] / l, s[2] / l];
+          var u = [s[1] * f[2] - s[2] * f[1], s[2] * f[0] - s[0] * f[2], s[0] * f[1] - s[1] * f[0]];
+          return [s[0], u[0], -f[0], 0, s[1], u[1], -f[1], 0, s[2], u[2], -f[2], 0, -(s[0]*e[0]+s[1]*e[1]+s[2]*e[2]), -(u[0]*e[0]+u[1]*e[1]+u[2]*e[2]), (f[0]*e[0]+f[1]*e[1]+f[2]*e[2]), 1];
+        }
+        /* a new ridge: the spectrum spread across the width with a gentle swell underneath, tapering at both ends;
+           each point gets a little roughness so the peaks bristle like the strands of a waveform */
+        function newRow(t){
+          var row = hist[head = (head + 1) % R];
+          rowN++;
+          for (var c = 0; c < C; c++){
+            var x = c / (C - 1), b = 10 + x * 53, i0 = Math.floor(b), f = b - i0, s = spec[i0] * (1 - f) + spec[Math.min(63, i0 + 1)] * f;
+            s = Math.pow(Math.min(1.3, s / runMax), 1.5);                        // measured against the track's own recent peak, and sharpened so loud parts tower over quiet ones
+            var swell = 0.09 + 0.06 * Math.sin(x * 7.0 + t * 0.6) + 0.09 * Math.sin(x * 15.0 - t * 1.6 + rowN * 0.09) * (0.2 + mid * 1.6);
+            var edge = Math.pow(Math.sin(Math.PI * Math.min(1, Math.max(0, x * 1.04 - 0.02))), 0.5);
+            var rough = 0.93 + 0.14 * Math.random();
+            row[c] = Math.max(0, (swell + s * 3.1 * rough * (1 + kick * 0.55)) * edge);
+          }
+        }
+        function draw(){
+          if (failed) return;
+          if (!ready){ try { glBuf = gl.getParameter(gl.ARRAY_BUFFER_BINDING); init(); } catch (e){ failed = true; if (window.console) console.error('Spectral Ridges could not start', e); return; } }
+          var now = performance.now(), dt = last ? Math.min(0.1, (now - last) / 1000) : 1 / 60; last = now;
+          tt += dt;
+          bass += (bands.bass - bass) * Math.min(1, dt * 8);
+          mid += (bands.mid - mid) * Math.min(1, dt * 4);
+          if (bands.bass > 0.55 && prevB <= 0.55) kick = 1;
+          prevB = bands.bass;
+          kick *= Math.exp(-dt * 5);
+          if (ridgeDrop){ flash = 1; hueTo += 0.22; kick = 1; ridgeDrop = 0; }   // a drop: the whole range flashes and the colours turn
+          flash *= Math.exp(-dt * 2.2);
+          hue += (hueTo - hue) * Math.min(1, dt * 1.2);
+          /* the spectrum, quick to rise and slower to fall; the highs lifted so the right-hand side has peaks too */
+          var on = typeof freq !== 'undefined' && freq && (bands.bass + bands.mid + bands.high) > 0.001;
+          for (var i = 0; i < 64; i++){
+            var tg = 0;
+            if (on){ var sm = 0; for (var j = sLo[i]; j <= sHi[i]; j++) sm += freq[j]; tg = Math.min(1, Math.max(0, sm / ((sHi[i] - sLo[i] + 1) * 255) * (0.75 + i / 64 * 1.4) - 0.12) * 1.25); }
+            spec[i] += (tg - spec[i]) * Math.min(1, dt * (tg > spec[i] ? 30 : 11));
+          }
+          var fm = 0; for (var i2 = 0; i2 < 64; i2++) fm = Math.max(fm, spec[i2]);
+          runMax = Math.max(0.3, fm, runMax * Math.exp(-dt * 0.3));         // the loudest of the last few seconds
+          high += (bands.high - high) * Math.min(1, dt * 6);
+          rate = 30 * (0.75 + mid * 0.6 + kick * 0.9);                       // the range rushes back faster when the music is busy
+          acc += dt;
+          while (acc >= 1 / rate){ acc -= 1 / rate; newRow(tt); }
+          if (acc > 0.2) acc = 0;
+          /* lay the ridges out: the newest at the front, gliding back as the next arrives */
+          var k = 0, slide = Math.min(1, acc * rate), gain = Math.min(1, (now - startT) / 1500);
+          var wNow = Math.max(9, Math.min(17, 2 * Math.tan(24 * Math.PI / 180) * (W / Math.max(1, H)) * 9.2));   // the range fills the width of the screen
+          for (var a = 0; a < R; a++){
+            var row = hist[(head - a + R) % R], z = -(a + slide) * DZ, sway = Math.sin(a * 0.12 + tt * 0.35) * 0.3;
+            var fade = Math.exp(-(a + slide) * 0.035) * Math.min(1, (a + slide) * 0.8 + 0.2);
+            for (var c = 0; c < C; c++){
+              var h = row[c];
+              verts[k++] = (c / (C - 1) - 0.5) * wNow + sway; verts[k++] = h; verts[k++] = z;
+              verts[k++] = (0.03 + h * 0.18) * fade * (1 + bass * 0.5 + (a < 10 ? kick * 1.4 * (1 - a / 10) : 0)); verts[k++] = rnd[a * C + c];
+            }
+          }
+          /* the fine hairs hanging from the nearest ridges, bright at the ridge and fading towards the floor */
+          var m = 0;
+          for (var a2 = 0; a2 < HAIR; a2++){
+            for (var c2 = 0; c2 < C; c2++){
+              var vi = (a2 * C + c2) * 5, hh = verts[vi + 1], br = verts[vi + 3] * (0.25 + high * 0.35) * (1 - a2 / HAIR);
+              hair[m++] = verts[vi]; hair[m++] = hh; hair[m++] = verts[vi + 2]; hair[m++] = br; hair[m++] = 0;
+              hair[m++] = verts[vi]; hair[m++] = hh * 0.1; hair[m++] = verts[vi + 2]; hair[m++] = 0; hair[m++] = 0;
+            }
+          }
+          sizeTo(W, H);
+          var eye = [Math.sin(tt * 0.05) * 1.6, 2.1 + bass * 0.15 + kick * 0.3, 7.2 - kick * 0.5], look = [Math.sin(tt * 0.05) * 0.5, 3.3, -5];
+          var vp = mul(persp(48 * Math.PI / 180, W / H, 0.1, 80), lookAt(eye, look));
+          gl.bindFramebuffer(gl.FRAMEBUFFER, tS.fb); gl.viewport(0, 0, W, H);
+          gl.clearColor(0.03, 0.03, 0.035, 1); gl.clear(gl.COLOR_BUFFER_BIT);
+          if (pic && picDirty){                                         // a new picture: into a texture, the right way up
+            if (!picTex) picTex = gl.createTexture();
+            gl.bindTexture(gl.TEXTURE_2D, picTex);
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, pic);
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            picDirty = false;
+          }
+          if (pic && picTex){                                           // your picture behind the ridges
+            gl.useProgram(picP.p);
+            gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, picTex); gl.uniform1i(picP.u.uTex, 0);
+            gl.uniform2f(picP.u.uRes, W, H); gl.uniform1f(picP.u.uAsp, picAsp); gl.uniform1f(picP.u.uDim, 0.45 * gain);
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          }
+          gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE);
+          gl.useProgram(pp);
+          gl.uniformMatrix4fv(pu.uVP, false, new Float32Array(vp));
+          gl.uniform1f(pu.uHue, hue); gl.uniform1f(pu.uWidth, wNow); gl.uniform1f(pu.uFlash, flash * 0.8); gl.uniform1f(pu.uPx, Math.max(1, H / 540) * 1.6);
+          gl.enableVertexAttribArray(1);
+          gl.bindBuffer(gl.ARRAY_BUFFER, vb); gl.bufferSubData(gl.ARRAY_BUFFER, 0, verts);
+          gl.vertexAttribPointer(0, 4, gl.FLOAT, false, 20, 0); gl.vertexAttribPointer(1, 1, gl.FLOAT, false, 20, 16);
+          gl.uniform1f(pu.uMode, 0); gl.uniform1f(pu.uGain, gain);
+          for (var a3 = R - 1; a3 >= 0; a3--) gl.drawArrays(gl.LINE_STRIP, a3 * C, C);      // the ridge lines
+          gl.uniform1f(pu.uMode, 2); gl.uniform1f(pu.uGain, gain * (0.4 + high * 0.8));
+          gl.drawArrays(gl.POINTS, C * 2, (R - 2) * C);                                    // the dust beneath them
+          gl.bindBuffer(gl.ARRAY_BUFFER, hb); gl.bufferSubData(gl.ARRAY_BUFFER, 0, hair);
+          gl.vertexAttribPointer(0, 4, gl.FLOAT, false, 20, 0); gl.vertexAttribPointer(1, 1, gl.FLOAT, false, 20, 16);
+          gl.uniform1f(pu.uMode, 1); gl.uniform1f(pu.uGain, gain);
+          gl.drawArrays(gl.LINES, 0, HAIR * C * 2);                                       // the hairs
+          gl.disableVertexAttribArray(1);
+          gl.disable(gl.BLEND);
+          gl.bindBuffer(gl.ARRAY_BUFFER, glBuf);
+          gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+          /* a soft glow laid over the sharp lines */
+          gl.useProgram(blurP.p);
+          var st = Math.max(1, H / 450) * 1.3;
+          blur(tS, tG1, st, 0); blur(tG1, tG2, 0, st);
+          gl.bindFramebuffer(gl.FRAMEBUFFER, outT.fb); gl.viewport(0, 0, W, H);
+          gl.useProgram(finP.p);
+          gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tS.tex); gl.uniform1i(finP.u.uScene, 0);
+          gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, tG2.tex); gl.uniform1i(finP.u.uGlow, 1);
+          gl.uniform2f(finP.u.uRes, W, H);
+          gl.uniform1f(finP.u.uGlowAmt, 0.55 + bass * 0.3 + flash * 0.5);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          gl.activeTexture(gl.TEXTURE0);
+          gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+          gl.viewport(0, 0, W, H);
+        }
+        return { draw:draw, tex:function(){ return outT && outT.tex; }, setPicture:setPicture, clearPicture:clearPicture };
+      })();
+
+      /* the "use my picture" controls, shown only while Spectral Ridges is the background; the picture is kept on this
+         device (shared by the Lab and Trips) */
+      (function(){
+        var inp = document.getElementById('ridgePicIn'), clr = document.getElementById('ridgePicClear'), nm = document.getElementById('ridgePicName');
+        if (!inp || !clr || !ridgeArt) return;
+        function show(name){ if (nm) nm.textContent = name ? name : 'Black'; clr.hidden = !name; }
+        inp.addEventListener('change', function(){
+          var file = inp.files && inp.files[0]; inp.value = '';
+          if (!file) return;
+          var url = URL.createObjectURL(file), im = new Image();
+          im.onload = function(){ ridgeArt.setPicture(im, true); URL.revokeObjectURL(url); show(file.name); try { localStorage.setItem('ridgePictureName', file.name); } catch (e){} };
+          im.onerror = function(){ URL.revokeObjectURL(url); if (nm) nm.textContent = 'That picture could not be opened'; };
+          im.src = url;
+        });
+        clr.addEventListener('click', function(){ ridgeArt.clearPicture(); show(''); });
+        try {
+          var saved = localStorage.getItem('ridgePicture');
+          if (saved){ var im = new Image(); im.onload = function(){ ridgeArt.setPicture(im, false); var n = null; try { n = localStorage.getItem('ridgePictureName'); } catch (e){} show(n || 'Your picture'); }; im.src = saved; }
+        } catch (e){}
+      })();
+    } catch (e){ if (window.console) console.error('Spectral Ridges background', e); }
+
+    /* ---------- Spectrum Horizon (original, made for this lab, from a picture): a glossy floor of woven tiles stretching
+       away to a skyline of thin glowing spectrum bars on the horizon, with curtains of light rising behind them into a
+       starry sky. The bars are the sound now (bass in the middle, highs out to the sides); the floor carries it towards
+       you in waves, so each sound rolls in from the horizon. Kicks flash the near floor and lift the bars, the highs light
+       the curtains and stars, and a drop flashes everything and turns the colours. ---------- */
+    var shzArt = null, shzDrop = 0;
+    try {
+      scenes.shz = scenes.village;                                      // shown through the same effects
+      shzArt = (function(){
+        var ready = false, failed = false, kp, target = null, tw = 0, th = 0, last = 0, startT = 0;
+        var bass = 0, mid = 0, high = 0, kick = 0, prevB = 0, flash = 0, hue = 0, hueTo = 0, tt = 0, scroll = 0;
+        /* the sound: 64 bands on a musical scale, one row every 1/24 s into a 64-row ring buffer */
+        var specTex = null, specRow = new Uint8Array(64), specSm = new Float32Array(64), specHead = 0, specAcc = 0, sLo = [], sHi = [];
+        for (var bi = 0; bi < 64; bi++){ sLo[bi] = Math.max(1, Math.floor(Math.pow(2, bi / 64 * 7.6))); sHi[bi] = Math.max(sLo[bi], Math.floor(Math.pow(2, (bi + 1) / 64 * 7.6)) - 1); }
+        function specStep(dt){
+          if (!specTex){
+            specTex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, specTex);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.LUMINANCE, 64, 64, 0, gl.LUMINANCE, gl.UNSIGNED_BYTE, new Uint8Array(64 * 64));
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+          }
+          var on = typeof freq !== 'undefined' && freq && (bands.bass + bands.mid + bands.high) > 0.001;   // freq is read each frame by the music meter
+          for (var i = 0; i < 64; i++){
+            var tg = 0;
+            if (on){ var sm = 0; for (var j = sLo[i]; j <= sHi[i]; j++) sm += freq[j]; tg = Math.min(1, Math.max(0, sm / ((sHi[i] - sLo[i] + 1) * 255) * (0.75 + i / 64 * 1.3) - 0.12) * 1.25); }
+            specSm[i] += (tg - specSm[i]) * Math.min(1, dt * (tg > specSm[i] ? 30 : 8));   // quick to rise, slower to sink
+          }
+          specAcc += dt;
+          if (specAcc >= 1 / 24){
+            specAcc = Math.min(specAcc - 1 / 24, 0.1);
+            specHead = (specHead + 1) % 64;
+            for (i = 0; i < 64; i++) specRow[i] = Math.round(specSm[i] * 255);
+            gl.bindTexture(gl.TEXTURE_2D, specTex);
+            gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, specHead, 64, 1, gl.LUMINANCE, gl.UNSIGNED_BYTE, specRow);
+          }
+        }
+        var NAMES = ['uRes', 'uTime', 'uHead', 'uBass', 'uMid', 'uHigh', 'uKick', 'uFlash', 'uHue', 'uGain', 'uScroll', 'uSpec'];
+        function draw(){
+          if (failed) return;
+          if (!ready){ try { kp = program('shzFrag', NAMES); startT = performance.now(); ready = true; } catch (e){ failed = true; if (window.console) console.error('Spectrum Horizon could not start', e); return; } }
+          if (!target || tw !== W || th !== H){ if (target) freeTarget(target); target = makeTarget(W, H); tw = W; th = H; }
+          var now = performance.now(), dt = last ? Math.min(0.1, (now - last) / 1000) : 1 / 60; last = now;
+          tt += dt;
+          bass += (bands.bass - bass) * Math.min(1, dt * 8);
+          mid += (bands.mid - mid) * Math.min(1, dt * 4);
+          high += (bands.high - high) * Math.min(1, dt * 6);
+          if (bands.bass > 0.55 && prevB <= 0.55) kick = 1;
+          prevB = bands.bass;
+          kick *= Math.exp(-dt * 5);
+          if (shzDrop){ flash = 1; hueTo += 0.18; kick = 1; shzDrop = 0; }   // a drop: everything flashes and the colours turn
+          flash *= Math.exp(-dt * 2.4);
+          hue += (hueTo - hue) * Math.min(1, dt * 1.2);
+          specStep(dt);
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.fb);
+          gl.viewport(0, 0, W, H);
+          gl.useProgram(kp.p);
+          var u = kp.u;
+          gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, specTex); gl.uniform1i(u.uSpec, 0);
+          gl.uniform2f(u.uRes, W, H); gl.uniform1f(u.uTime, tt); gl.uniform1f(u.uHead, specHead);
+          gl.uniform1f(u.uBass, bass); gl.uniform1f(u.uMid, mid); gl.uniform1f(u.uHigh, high); gl.uniform1f(u.uKick, kick);
+          gl.uniform1f(u.uFlash, flash); gl.uniform1f(u.uHue, hue); gl.uniform1f(u.uScroll, scroll);
+          gl.uniform1f(u.uGain, Math.min(1, (now - startT) / 1200));
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+          gl.viewport(0, 0, W, H);
+        }
+        return { draw:draw, tex:function(){ return target && target.tex; } };
+      })();
+    } catch (e){ if (window.console) console.error('Spectrum Horizon background', e); }
+
+    /* ---------- Sand Spectrum (original, made for this lab): coloured sand poured into the shape of the spectrum, like a
+       sand-art bottle. Sand pours in where the music is louder than the pile (bass on the left, highs on the right) and
+       slowly sinks away where it is quieter; the slopes slide to sand's natural angle. The colour being poured changes
+       with the music, so the sound is laid down in coloured layers. Kicks blow grains off the peaks to scatter and fall
+       back, and a drop blasts the whole pile up into the air and turns the colours. ---------- */
+    var sandArt = null, sandDrop = 0;
+    try {
+      scenes.sand = scenes.village;                                     // shown through the same effects
+      sandArt = (function(){
+        var ready = false, failed = false, kp, target = null, tw = 0, th = 0, last = 0, startT = 0;
+        var NC = 240, NR = 150, TOP = 0.86, MAXP = 5000;
+        var Hh = new Float32Array(NC), cells = new Uint8Array(NC * NR * 4), cellTex = null, drain = 0;
+        var px = new Float32Array(MAXP), py = new Float32Array(MAXP), pvx = new Float32Array(MAXP), pvy = new Float32Array(MAXP), pc = new Float32Array(MAXP * 3), pOn = new Uint8Array(MAXP), pN = 0;
+        var pBuf = null, pData = new Float32Array(MAXP * 5), ptProg = null, pu = {}, glBuf = null;
+        var tt = 0, bass = 0, high = 0, kick = 0, prevB = 0, flash = 0, hue = Math.random(), layerT = 0;
+        var spec = new Float32Array(64), sLo = [], sHi = [];
+        for (var bi = 0; bi < 64; bi++){ sLo[bi] = Math.max(1, Math.floor(Math.pow(2, bi / 64 * 7.6))); sHi[bi] = Math.max(sLo[bi], Math.floor(Math.pow(2, (bi + 1) / 64 * 7.6)) - 1); }
+        for (var i0 = 0; i0 < NC; i0++) Hh[i0] = 4;
+        function hsl(h, s, l){ var q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+          function f(t){ t = (t % 1 + 1) % 1; return t < 1 / 6 ? p + (q - p) * 6 * t : t < 0.5 ? q : t < 2 / 3 ? p + (q - p) * (2 / 3 - t) * 6 : p; }
+          return [f(h + 1 / 3), f(h), f(h - 1 / 3)]; }
+        /* the colour of the sand being poured into a column now: the current layer's hue, drifting a little across the jar,
+           sometimes the natural colour of sand */
+        function sandCol(i){
+          var h = hue + i / NC * 0.3, c = hsl(h, 0.72, 0.56);
+          var nat = 0.5 + 0.5 * Math.sin(hue * 25.0);
+          if (nat > 0.95) c = [0.86, 0.72, 0.5];
+          return c;
+        }
+        function setCell(i, j, c){ var k = (j * NC + i) * 4; cells[k] = c[0] * 255; cells[k + 1] = c[1] * 255; cells[k + 2] = c[2] * 255; }
+        function cellCol(i, j){ var k = (j * NC + i) * 4; return [cells[k] / 255, cells[k + 1] / 255, cells[k + 2] / 255]; }
+        /* add sand to a column, colouring each newly filled cell */
+        function addSand(i, amt, c){
+          var before = Hh[i], after = Math.min(NR - 0.01, before + amt);
+          for (var j = Math.floor(before); j <= Math.floor(after) && j < NR; j++) if (j >= Math.ceil(before) || j === Math.floor(before) && before % 1 < 0.02) setCell(i, j, c);
+          Hh[i] = after;
+        }
+        function spawn(x, y, vx, vy, c){
+          if (pN >= MAXP) return;
+          for (var k = 0; k < MAXP; k++){ if (!pOn[k]){ pOn[k] = 1; px[k] = x; py[k] = y; pvx[k] = vx; pvy[k] = vy; pc[k * 3] = c[0]; pc[k * 3 + 1] = c[1]; pc[k * 3 + 2] = c[2]; pN++; return; } }
+        }
+        /* blow grains off a column's top into the air */
+        function blow(i, n, power){
+          for (var q = 0; q < n && Hh[i] > 1.2; q++){
+            var top = Math.max(0, Math.floor(Hh[i] - 0.01)), c = cellCol(i, top);
+            Hh[i] = Math.max(1, Hh[i] - 0.18);
+            spawn((i + Math.random()) / NC, Hh[i] / NR * TOP, (Math.random() - 0.5) * 0.5 * power, (0.4 + Math.random() * 0.9) * power, c);
+          }
+        }
+        var NAMES = ['uRes', 'uCells', 'uGrid', 'uTop', 'uTime', 'uHigh', 'uFlash', 'uGain'];
+        function init(){
+          kp = program('sandFrag', NAMES);
+          cellTex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, cellTex);
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, NC, NR, 0, gl.RGBA, gl.UNSIGNED_BYTE, cells);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+          pBuf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, pBuf); gl.bufferData(gl.ARRAY_BUFFER, pData.byteLength, gl.DYNAMIC_DRAW);
+          gl.bindBuffer(gl.ARRAY_BUFFER, glBuf);
+          ptProg = gl.createProgram();
+          gl.attachShader(ptProg, compile(gl.VERTEX_SHADER, document.getElementById('sandPtVert').textContent));
+          gl.attachShader(ptProg, compile(gl.FRAGMENT_SHADER, document.getElementById('sandPtFrag').textContent));
+          gl.bindAttribLocation(ptProg, 0, 'aPos'); gl.bindAttribLocation(ptProg, 1, 'aCol');
+          gl.linkProgram(ptProg);
+          if (!gl.getProgramParameter(ptProg, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(ptProg));
+          ['uPx', 'uGain'].forEach(function(k){ pu[k] = gl.getUniformLocation(ptProg, k); });
+          var c0 = [0.86, 0.72, 0.5]; for (var i = 0; i < NC; i++) for (var j = 0; j < 4; j++) setCell(i, j, c0);
+          startT = performance.now(); ready = true;
+        }
+        function draw(){
+          if (failed) return;
+          if (!ready){ try { glBuf = gl.getParameter(gl.ARRAY_BUFFER_BINDING); init(); } catch (e){ failed = true; if (window.console) console.error('Sand Spectrum could not start', e); return; } }
+          if (!target || tw !== W || th !== H){ if (target) freeTarget(target); target = makeTarget(W, H); tw = W; th = H; }
+          var now = performance.now(), dt = last ? Math.min(0.05, (now - last) / 1000) : 1 / 60; last = now;
+          tt += dt;
+          bass += (bands.bass - bass) * Math.min(1, dt * 8);
+          high += (bands.high - high) * Math.min(1, dt * 6);
+          var kicked = bands.bass > 0.55 && prevB <= 0.55; prevB = bands.bass;
+          if (kicked) kick = 1;
+          kick *= Math.exp(-dt * 5);
+          flash *= Math.exp(-dt * 2.5);
+          /* the spectrum */
+          var on = typeof freq !== 'undefined' && freq && (bands.bass + bands.mid + bands.high) > 0.001;
+          for (var b = 0; b < 64; b++){
+            var tg = 0;
+            if (on){ var sm = 0; for (var j = sLo[b]; j <= sHi[b]; j++) sm += freq[j]; tg = Math.min(1, Math.max(0, sm / ((sHi[b] - sLo[b] + 1) * 255) * (0.75 + b / 64 * 1.4) - 0.12) * 1.25); }
+            spec[b] += (tg - spec[b]) * Math.min(1, dt * (tg > spec[b] ? 20 : 5));
+          }
+          /* a new layer colour every few seconds, sooner on a kick */
+          layerT += dt;
+          if (layerT > 2.5 || (kicked && layerT > 1.0)){ layerT = 0; hue += 0.09 + Math.random() * 0.12; }
+          /* each column: sand pours in where the music stands above the pile and sinks away where it is below */
+          for (var i = 0; i < NC; i++){
+            var x = i / (NC - 1), bb = 10 + x * 52, b0 = Math.floor(bb), f = bb - b0, s = spec[b0] * (1 - f) + spec[Math.min(63, b0 + 1)] * f;
+            var T = 3 + s * NR * 0.66;
+            var d = T - Hh[i];
+            if (d > 0){
+              addSand(i, Math.min(d, (d * 5 + 6) * dt), sandCol(i));
+              if (Math.random() < Math.min(1, d * dt * 6)) spawn((i + Math.random()) / NC, Math.min(1.02, (Hh[i] + d * 0.6 + 8) / NR * TOP), 0, -0.2, sandCol(i));   // a trickle of grains pouring in
+            } else Hh[i] = Math.max(1, Hh[i] + d * 2.2 * dt);       // sinking away, more slowly than it came
+          }
+          /* the sand drains slowly out through the bottom of the jar, so the layers flow down and fresh sand keeps
+             pouring in on top (quicker when the music is busy) */
+          drain += dt * (1.2 + bands.mid * 2.0);
+          if (drain >= 1){
+            drain -= 1;
+            for (var i5 = 0; i5 < NC; i5++){
+              if (Hh[i5] < 5) continue;
+              cells.copyWithin((4 * NC + i5) * 4, (5 * NC + i5) * 4, (5 * NC + i5) * 4 + 4);   // (keep the floor's base sand)
+              for (var j5 = 4; j5 < NR - 1; j5++){ var k5 = (j5 * NC + i5) * 4, k6 = k5 + NC * 4; cells[k5] = cells[k6]; cells[k5 + 1] = cells[k6 + 1]; cells[k5 + 2] = cells[k6 + 2]; }
+              Hh[i5] -= 1;
+            }
+          }
+          /* the slopes slide to the angle of repose */
+          for (var pass = 0; pass < 2; pass++){
+            for (var i2 = 0; i2 < NC - 1; i2++){
+              var a = i2, c = i2 + 1; if (Hh[c] > Hh[a]){ a = i2 + 1; c = i2; }
+              var dd = Hh[a] - Hh[c] - 2.2;
+              if (dd > 0){ var m = dd * 0.4; var col = cellCol(a, Math.max(0, Math.floor(Hh[a] - 0.01))); Hh[a] -= m; addSand(c, m, col); }
+            }
+          }
+          /* kicks blow grains off the tallest peaks; a drop blasts the whole pile */
+          if (kicked){ for (var k2 = 0; k2 < 6; k2++){ var best = 0, bi2 = 0; for (var t = 0; t < 12; t++){ var r = Math.floor(Math.random() * NC); if (Hh[r] > best){ best = Hh[r]; bi2 = r; } } blow(bi2, 14, 0.8 + bass * 0.6); } }
+          if (sandDrop){ for (var i3 = 0; i3 < NC; i3 += 2) blow(i3, 10, 1.4); flash = 1; hue += 0.33; layerT = 0; sandDrop = 0; }
+          /* the grains in the air: gravity, a little drift, landing back on the pile */
+          var n = 0;
+          for (var p = 0; p < MAXP; p++){
+            if (!pOn[p]) continue;
+            pvy[p] -= dt * 2.2; pvx[p] *= Math.exp(-dt * 0.8);
+            px[p] += pvx[p] * dt; py[p] += pvy[p] * dt;
+            if (px[p] < 0 || px[p] >= 1){ pOn[p] = 0; pN--; continue; }
+            var ci = Math.min(NC - 1, Math.floor(px[p] * NC)), ground = Hh[ci] / NR * TOP;
+            if (py[p] <= ground && pvy[p] < 0){ addSand(ci, 0.18, [pc[p * 3], pc[p * 3 + 1], pc[p * 3 + 2]]); pOn[p] = 0; pN--; continue; }
+            pData[n * 5] = px[p]; pData[n * 5 + 1] = py[p]; pData[n * 5 + 2] = pc[p * 3]; pData[n * 5 + 3] = pc[p * 3 + 1]; pData[n * 5 + 4] = pc[p * 3 + 2]; n++;
+          }
+          /* how full each cell is */
+          for (var i4 = 0; i4 < NC; i4++){
+            var hcol = Hh[i4], full = Math.floor(hcol);
+            for (var j4 = 0; j4 < NR; j4++) cells[(j4 * NC + i4) * 4 + 3] = j4 < full ? 255 : j4 === full ? Math.round((hcol - full) * 255) : 0;
+          }
+          var gain = Math.min(1, (now - startT) / 1200);
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.fb); gl.viewport(0, 0, W, H);
+          gl.useProgram(kp.p);
+          gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, cellTex);
+          gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, NC, NR, gl.RGBA, gl.UNSIGNED_BYTE, cells);
+          gl.uniform1i(kp.u.uCells, 0);
+          gl.uniform2f(kp.u.uRes, W, H); gl.uniform2f(kp.u.uGrid, NC, NR); gl.uniform1f(kp.u.uTop, TOP);
+          gl.uniform1f(kp.u.uTime, tt); gl.uniform1f(kp.u.uHigh, high); gl.uniform1f(kp.u.uFlash, flash); gl.uniform1f(kp.u.uGain, gain);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          if (n){                                                        // the grains in the air
+            gl.useProgram(ptProg);
+            gl.uniform1f(pu.uPx, Math.max(1.5, H / 420)); gl.uniform1f(pu.uGain, gain);
+            gl.bindBuffer(gl.ARRAY_BUFFER, pBuf); gl.bufferSubData(gl.ARRAY_BUFFER, 0, pData.subarray(0, n * 5));
+            gl.enableVertexAttribArray(1);
+            gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 20, 0); gl.vertexAttribPointer(1, 3, gl.FLOAT, false, 20, 8);
+            gl.drawArrays(gl.POINTS, 0, n);
+            gl.disableVertexAttribArray(1);
+            gl.bindBuffer(gl.ARRAY_BUFFER, glBuf); gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+          }
+          gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+          gl.viewport(0, 0, W, H);
+        }
+        return { draw:draw, tex:function(){ return target && target.tex; } };
+      })();
+    } catch (e){ if (window.console) console.error('Sand Spectrum background', e); }
+
+    /* ---------- My Picture: your own picture as the background, filling the screen (cropped, never stretched), for the
+       effects to work on. It stays still and upright; the effects bring the music. Kept on this device (shared by the
+       Lab and Trips). ---------- */
+    var mypicArt = null;
+    try {
+      scenes.mypic = scenes.village;                                    // shown through the same effects
+      mypicArt = (function(){
+        var ready = false, failed = false, kp, target = null, tw = 0, th = 0, last = 0, startT = 0;
+        var pic = null, picTex = null, picAsp = 1, picDirty = false;
+        function setPicture(img, save){
+          var k = Math.min(1, 2048 / Math.max(img.naturalWidth || img.width, img.naturalHeight || img.height));
+          var c = document.createElement('canvas'); c.width = Math.max(1, Math.round((img.naturalWidth || img.width) * k)); c.height = Math.max(1, Math.round((img.naturalHeight || img.height) * k));
+          c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+          pic = c; picAsp = c.width / c.height; picDirty = true;
+          if (save){
+            try { localStorage.setItem('myPicture', c.toDataURL('image/jpeg', 0.9)); }
+            catch (e){
+              try { var c2 = document.createElement('canvas'), k2 = 1280 / Math.max(c.width, c.height); c2.width = Math.round(c.width * Math.min(1, k2)); c2.height = Math.round(c.height * Math.min(1, k2)); c2.getContext('2d').drawImage(c, 0, 0, c2.width, c2.height); localStorage.setItem('myPicture', c2.toDataURL('image/jpeg', 0.82)); }
+              catch (e2){ try { localStorage.removeItem('myPicture'); } catch (e3){} }
+            }
+          }
+        }
+        function clearPicture(){
+          pic = null; picDirty = false;
+          if (picTex){ gl.deleteTexture(picTex); picTex = null; }
+          try { localStorage.removeItem('myPicture'); localStorage.removeItem('myPictureName'); } catch (e){}
+        }
+        function draw(){
+          if (failed) return;
+          if (!ready){ try { kp = program('ridgePicFrag', ['uTex','uRes','uAsp','uDim']); startT = performance.now(); ready = true; } catch (e){ failed = true; if (window.console) console.error('My Picture could not start', e); return; } }
+          if (!target || tw !== W || th !== H){ if (target) freeTarget(target); target = makeTarget(W, H); tw = W; th = H; }
+          if (pic && picDirty){                                         // a new picture: into a texture, the right way up
+            if (!picTex) picTex = gl.createTexture();
+            gl.bindTexture(gl.TEXTURE_2D, picTex);
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, pic);
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            picDirty = false; startT = performance.now();
+          }
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.fb); gl.viewport(0, 0, W, H);
+          gl.clearColor(0.04, 0.04, 0.05, 1); gl.clear(gl.COLOR_BUFFER_BIT);
+          if (pic && picTex){
+            gl.useProgram(kp.p);
+            gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, picTex); gl.uniform1i(kp.u.uTex, 0);
+            gl.uniform2f(kp.u.uRes, W, H); gl.uniform1f(kp.u.uAsp, picAsp); gl.uniform1f(kp.u.uDim, Math.min(1, (performance.now() - startT) / 800));
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          }
+          gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+          gl.viewport(0, 0, W, H);
+        }
+        return { draw:draw, tex:function(){ return target && target.tex; }, setPicture:setPicture, clearPicture:clearPicture };
+      })();
+      (function(){
+        var inp = document.getElementById('mypicIn'), clr = document.getElementById('mypicClear'), nm = document.getElementById('mypicName');
+        if (!inp || !clr || !mypicArt) return;
+        function show(name){ if (nm) nm.textContent = name ? name : 'None yet: choose one'; clr.hidden = !name; }
+        inp.addEventListener('change', function(){
+          var file = inp.files && inp.files[0]; inp.value = '';
+          if (!file) return;
+          var url = URL.createObjectURL(file), im = new Image();
+          im.onload = function(){ mypicArt.setPicture(im, true); URL.revokeObjectURL(url); show(file.name); try { localStorage.setItem('myPictureName', file.name); } catch (e){} };
+          im.onerror = function(){ URL.revokeObjectURL(url); if (nm) nm.textContent = 'That picture could not be opened'; };
+          im.src = url;
+        });
+        clr.addEventListener('click', function(){ mypicArt.clearPicture(); show(''); });
+        try {
+          var saved = localStorage.getItem('myPicture');
+          if (saved){ var im = new Image(); im.onload = function(){ mypicArt.setPicture(im, false); var n = null; try { n = localStorage.getItem('myPictureName'); } catch (e){} show(n || 'Your picture'); }; im.src = saved; }
+        } catch (e){}
+      })();
+    } catch (e){ if (window.console) console.error('My Picture background', e); }
+
     /* ---------- Ocean: drifts through the original's six scenes (dawn, midday, dusk, storm, night,
        pre-dawn) by itself instead of by scrolling. It holds each scene for about 40 seconds, then takes
        about 8 seconds to move to the next, and goes back the way it came at either end. A drop moves on
@@ -15096,7 +16221,7 @@ void main(){
     var contDrop = 0, contFlash = 0;
     var celDrop = 0, celFlash = 0, celLv = 4.5;
     /* Retro palettes in the shader: 1 PICO-8, 2 1-bit, 3 CGA, 4 C64 */
-    var marbDrop = 0, marbStir = 0, marbT = 0, marbAmt = 0.17, smokeDrop = 0, smokePuff = 0, smokeT = 0, orenDrop = 0, orenAng = 2.2, orenTo = 2.2, orenEl = 0.5, orenElT = 0, orenRough = 0.6, orenKick = 0, orenPrevB = 0, silvDrop = 0, silvT = 0, silvAmt = 0.8, silvFlash = 0, silvKick = 0, silvPrevB = 0, noirDrop = 0, noirInv = 0, noirT = 0, noirIdx = 0, noirKick = 0, noirPrevB = 0, dichDrop = 0, dichT = 0, dichFlip = 0, dichFlipTo = 0, dichTilt = 0, dichKick = 0, dichPrevB = 0, tintDrop = 0, tintV = 0, tintHold = 0, tintAmb = 0, tintAmbTo = 0, tintFl = 1, tintFlT = 1, tintFlN = 0, matteDrop = 0, matteAng = 0.8, matteSw = -2, matteSwA = 0, matteB = 0, irDrop = 0, irFlash = 0, irB = 0, irT = 0, uvDrop = 0, uvHue = 0, uvKick = 0, uvPrevB = 0, uvStrobe = 0, risoDrop = 0, risoKick = 0, risoSet = 0, risoSetTo = 0, risoT = 0, risoB = 0, penDrop = 0, penFrame = 0, penT = 0, penAng = 0, penAngTo = 0, penB = 0, inkDrop = 0, inkFrame = 0, inkT = 0, inkCol = 0, inkColTo = 0, inkB = 0, hist = null, histProg = null, histHead = -1, histCount = 0, slitDrop = 0, slitDepth = 12, slitMode = 0, slitFlip = 0, stutDrop = 0, stutOn = 0, stutF = 0, stutLen = 0, stutKind = 0, stutL = 4, stutSlice = 0, stutPrevB = 0, stutDt = 1 / 60, stutLastK = 0, stutIvs = [], stutBeat = 0.47, stutEnd = 0, stutRep = 0, stutPunch = 0, stutFlash = 0, stutSlide = 0, satDrop = 0, satS = 1, satFlash = 0, satPrevB = 0, bleedDrop = 0, bleedA1 = 9, bleedA2 = 9, bleedS1 = 0, bleedS2 = 0, bleedPrevB = 0, bleedT = 0, selDrop = 0, selHue = 0.95, selFlash = 0, selW = 0.07, cc2Drop = 0, cc2A = 0, cc2B = 1, cc2Prog = 0, cc2Hold = 0, solarDrop = 0, solarFlash = 0, solarT = 0.55, lumDrop = 0, lumAng = 0.6, lumTo = 0.6, lumFlare = 0, ccycDrop = 0, ccA = 0, ccB = 1, ccProg = 0, ccHold = 0, ccT = 0;
+    var marbDrop = 0, marbStir = 0, marbT = 0, marbAmt = 0.17, smokeDrop = 0, smokePuff = 0, smokeT = 0, orenDrop = 0, orenAng = 2.2, orenTo = 2.2, orenEl = 0.5, orenElT = 0, orenRough = 0.6, orenKick = 0, orenPrevB = 0, silvDrop = 0, silvT = 0, silvAmt = 0.8, silvFlash = 0, silvKick = 0, silvPrevB = 0, noirDrop = 0, noirInv = 0, noirT = 0, noirIdx = 0, noirKick = 0, noirPrevB = 0, dichDrop = 0, dichT = 0, dichFlip = 0, dichFlipTo = 0, dichTilt = 0, dichKick = 0, dichPrevB = 0, tintDrop = 0, tintV = 0, tintHold = 0, tintAmb = 0, tintAmbTo = 0, tintFl = 1, tintFlT = 1, tintFlN = 0, matteDrop = 0, matteAng = 0.8, matteSw = -2, matteSwA = 0, matteB = 0, irDrop = 0, irFlash = 0, irB = 0, irT = 0, uvDrop = 0, uvHue = 0, uvKick = 0, uvPrevB = 0, uvStrobe = 0, risoDrop = 0, risoKick = 0, risoSet = 0, risoSetTo = 0, risoT = 0, risoB = 0, penDrop = 0, penFrame = 0, penT = 0, penAng = 0, penAngTo = 0, penB = 0, inkDrop = 0, inkFrame = 0, inkT = 0, inkCol = 0, inkColTo = 0, inkB = 0, hist = null, histProg = null, histHead = -1, histCount = 0, slitDrop = 0, slitDepth = 12, slitMode = 0, slitFlip = 0, stutDrop = 0, stutOn = 0, stutF = 0, stutLen = 0, stutKind = 0, stutL = 4, stutSlice = 0, stutPrevB = 0, stutDt = 1 / 60, stutLastK = 0, stutIvs = [], stutBeat = 0.47, stutEnd = 0, stutRep = 0, stutPunch = 0, stutFlash = 0, stutSlide = 0, satDrop = 0, satS = 1, satFlash = 0, satPrevB = 0, bleedDrop = 0, bleedA1 = 9, bleedA2 = 9, bleedS1 = 0, bleedS2 = 0, bleedPrevB = 0, bleedT = 0, selDrop = 0, selHue = 0.95, selFlash = 0, selW = 0.07, cc2Drop = 0, cc2A = 0, cc2B = 1, cc2Prog = 0, glowDrop = 0, glowB = 0, glowRay = 0, glowPrevB = 0, crumDrop = 0, crumT = 9, crumP = 0, crumK = 9, crumN = 0, crumPrevB = 0, coneDrop = 0, coneD = 0, coneR = 9, coneRS = 0, coneShake = 0, conePrevB = 0, sliceDrop = 0, sliceJ = 0, sliceSeed = 1, sliceRows = 8, slicePrevB = 0, slicePrevM = 0, triDrop = 0, triA = 0, triB = 1, triProg = 0, triHold = 0, triSlip = 0, triKick = 0, triPrevB = 0, triCut1 = 0.3, triCut2 = 0.66, cc2Hold = 0, solarDrop = 0, solarFlash = 0, solarT = 0.55, lumDrop = 0, lumAng = 0.6, lumTo = 0.6, lumFlare = 0, ccycDrop = 0, ccA = 0, ccB = 1, ccProg = 0, ccHold = 0, ccT = 0;
     var stainDrop = 0, stainSeed = 0, stainFlash = 0, stainT = 0, cellsDrop = 0, cellsSeed = 0, cellsFlash = 0, cellsT = 0;
     var qAng = 0, qKick = 0, qPrevBass = 0;
     var glassDrop = 0, glassMode = 0, glassT = 0, glassSpin = 0, glassShape = 0, glassR = [0.27, 0, 0, 0], glassArr = new Float32Array(16);
@@ -15162,7 +16287,9 @@ void main(){
       isoTarget += dt * 0.03 * (1 + bands.mid * 1.2);
       isoAz += (isoTarget - isoAz) * Math.min(1, dt * 0.5);
       isoCityV += (isoCity - isoCityV) * Math.min(1, dt * 1.2);
-      var isoTH = 0.1 + bands.bass * 0.065;
+      var isoB = adapt.db ? bands.bass * 0.35 + adapt.bass.lvl * 0.65 : bands.bass;
+      if (adapt.bass.hit) isoH += 0.018;                                  // a jump on each kick, even on a track that's loud throughout
+      var isoTH = 0.1 + isoB * 0.065;
       isoH += (isoTH - isoH) * Math.min(1, dt * (isoTH > isoH ? 8 : 2));
       gl.uniform4f(u.uIso, fx.iso ? 1 : 0, isoAz, isoH, 0.6155);
       gl.uniform2f(u.uIso2, 34, isoCityV);
@@ -15286,6 +16413,63 @@ void main(){
       }
       cc2Drop = 0;
       gl.uniform4f(u.uCC2, fx.ccycle2 ? 1 : 0, cc2A, cc2B, cc2Prog);
+      /* Glow rays: the bloom follows the bass; kicks stream rays out that fade over half a second; a drop floods the rays */
+      var gKick = adapt.db ? adapt.bass.hit : (bands.bass > 0.55 && glowPrevB <= 0.55); glowPrevB = bands.bass;
+      if (gKick) glowRay = Math.max(glowRay, 0.8 + bands.bass * 0.4);
+      if (glowDrop){ glowRay = 2.2; glowDrop = 0; }
+      glowRay *= Math.exp(-dt * 3.2);
+      glowB += ((0.15 + bands.bass * 0.9) - glowB) * Math.min(1, dt * 8);
+      gl.uniform4f(u.uGlowR, fx.glowrays ? 1 : 0, glowB, 0.18 + glowRay * 0.12, 0.25 + glowRay);
+      /* Crumble: a drop breaks the picture apart (about half a second out, a moment held, a second and a half back);
+         the highs make the edges shed grains */
+      /* every kick shakes the picture loose a little; every 32nd kick (every couple of phrases) it falls apart completely,
+         so it happens even in tracks without a clear drop */
+      var cKick = adapt.db ? adapt.bass.hit : (bands.bass > 0.55 && crumPrevB <= 0.55); crumPrevB = bands.bass;
+      if (cKick){ crumK = 0; if (++crumN >= 32 && crumT > 2.4){ crumN = 0; crumT = 0; } }
+      if (crumDrop){ crumT = 0; crumN = 0; crumDrop = 0; }
+      crumT += dt; crumK += dt;
+      var crumFull = crumT < 0.5 ? 1 - Math.pow(1 - crumT / 0.5, 3) : crumT < 0.9 ? 1 : crumT < 2.4 ? 1 - Math.pow((crumT - 0.9) / 1.5, 0.6) : 0;
+      var crumKick = (crumK < 0.07 ? crumK / 0.07 : Math.exp(-(crumK - 0.07) * 4.5)) * (0.1 + bands.bass * 0.06);
+      crumP = Math.max(crumFull, crumKick);
+      gl.uniform4f(u.uCrum, fx.crumble ? 1 : 0, crumP, Math.max(3, Math.round(H / 220)), bands.high * 0.2);
+      /* Speaker cone: kicks push the cone out and send a ring outwards; the bass holds it out a little; a drop is one
+         big thump with a shake. Kicks are found against the track's own level, so loud tracks still thump */
+      var coneKick = adapt.db ? adapt.bass.hit : (bands.bass > 0.55 && conePrevB <= 0.55); conePrevB = bands.bass;
+      if (coneKick){ coneD = Math.max(coneD, 0.16 + bands.bass * 0.08); coneR = 0.05; coneRS = 1; }
+      if (coneDrop){ coneD = 0.38; coneR = 0.05; coneRS = 1.8; coneShake = 1; coneDrop = 0; }
+      coneD += ((bands.bass * 0.06) - coneD) * Math.min(1, dt * 7);
+      coneR += dt * 1.5; coneRS *= Math.exp(-dt * 2.2);
+      coneShake *= Math.exp(-dt * 3.5);
+      var shk = coneShake * 0.03;
+      gl.uniform4f(u.uCone, fx.cone ? 1 : 0, coneD, coneR, coneRS);
+      gl.uniform2f(u.uCone2, Math.sin(time * 61.0) * shk, Math.cos(time * 47.0) * shk);
+      /* Beat slices: kicks and snares jolt the strips to new places, then they snap back; more strips when it's busy;
+         a drop scrambles them hard */
+      var sKick = adapt.db ? adapt.bass.hit : (bands.bass > 0.55 && slicePrevB <= 0.55);
+      var sSnare = adapt.db ? adapt.mid.hit : (bands.mid > 0.5 && slicePrevM <= 0.5);
+      slicePrevB = bands.bass; slicePrevM = bands.mid;
+      if (sKick || sSnare){ sliceJ = Math.max(sliceJ, sKick ? 1 : 0.6); sliceSeed = Math.floor(Math.random() * 997) + 1; sliceRows = 6 + Math.floor(Math.random() * 6 + bands.mid * 22); }
+      if (sliceDrop){ sliceJ = 2.4; sliceSeed = Math.floor(Math.random() * 997) + 1; sliceRows = 44; sliceDrop = 0; }
+      sliceJ *= Math.exp(-dt * 7);
+      gl.uniform4f(u.uSlice, fx.slices && sliceJ > 0.01 ? 1 : 0, sliceRows, sliceJ * (0.035 + bands.bass * 0.05), sliceSeed);
+      /* Tri-colour print: each ink set holds about 45 seconds, then the next is pulled across in about a second and a
+         half; a drop pulls the next straight away and knocks the screens out of register, settling over a second or so.
+         The bass lowers the cuts (more of the picture in the brighter inks) and each kick bumps them a touch further */
+      if (triDrop){ triSlip = 1; if (triProg <= 0){ triHold = 0; triProg = 0.0001; triB = (triA + 1) % 6; } triDrop = 0; }
+      if (triProg <= 0){
+        triHold += dt;
+        if (triHold > 45){ triHold = 0; triProg = 0.0001; triB = (triA + 1) % 6; }
+      } else {
+        triProg += dt / 1.5;
+        if (triProg >= 1){ triProg = 0; triA = triB; }
+      }
+      triSlip *= Math.exp(-dt * 2.4);
+      if (bands.bass > 0.55 && triPrevB <= 0.55) triKick = 1; triPrevB = bands.bass;
+      triKick *= Math.exp(-dt * 6);
+      triCut1 += ((0.3 - bands.bass * 0.05 - triKick * 0.03) - triCut1) * Math.min(1, dt * 8);
+      triCut2 += ((0.66 - bands.bass * 0.06 - triKick * 0.04) - triCut2) * Math.min(1, dt * 8);
+      gl.uniform4f(u.uTri, fx.tricolour ? 1 : 0, triA, triB, triProg);
+      gl.uniform4f(u.uTri2, triCut1, triCut2, triSlip, triKick);
       /* Saturation pulse: follows how much is going on (bass more than mids), with a kick bump and a drop slam that eases off */
       if (satDrop){ satFlash = 1; satDrop = 0; }
       satFlash *= Math.exp(-dt * 1.2);
@@ -15516,6 +16700,11 @@ void main(){
       if (bg === 'vliq' && vliqArt) vliqArt.draw();           // Viscous Liquid, offscreen
       if (bg === 'mobius' && mobiusArt) mobiusArt.draw();       // Möbius Cells, offscreen
       if (bg === 'vriver' && vriverArt) vriverArt.draw();       // Vertex River, offscreen
+      if (bg === 'pinf' && pinfArt) pinfArt.draw();           // Pin Field, offscreen
+      if (bg === 'ridge' && ridgeArt) ridgeArt.draw();         // Spectral Ridges, offscreen
+      if (bg === 'shz' && shzArt) shzArt.draw();               // Spectrum Horizon, offscreen
+      if (bg === 'sand' && sandArt) sandArt.draw();             // Sand Spectrum, offscreen
+      if (bg === 'mypic' && mypicArt) mypicArt.draw();         // My Picture, offscreen
       if (bg === 'ocean') oceanStep();
       if (bg === 'radio' && radioArt) radioArt.draw();
       if (bg === 'wave' && waveArt) waveArt.draw();
@@ -15557,6 +16746,11 @@ void main(){
       if (bg === 'vliq' && vliqArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, vliqArt.tex()); gl.uniform1i(u.uLines, 0); }
       if (bg === 'mobius' && mobiusArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, mobiusArt.tex()); gl.uniform1i(u.uLines, 0); }
       if (bg === 'vriver' && vriverArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, vriverArt.tex()); gl.uniform1i(u.uLines, 0); }
+      if (bg === 'pinf' && pinfArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, pinfArt.tex()); gl.uniform1i(u.uLines, 0); }
+      if (bg === 'ridge' && ridgeArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, ridgeArt.tex()); gl.uniform1i(u.uLines, 0); }
+      if (bg === 'shz' && shzArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, shzArt.tex()); gl.uniform1i(u.uLines, 0); }
+      if (bg === 'sand' && sandArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, sandArt.tex()); gl.uniform1i(u.uLines, 0); }
+      if (bg === 'mypic' && mypicArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, mypicArt.tex()); gl.uniform1i(u.uLines, 0); }
       if (bg === 'milk' && milkArt){ gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, milkArt.tex()); gl.uniform1i(u.uLines, 0); }
       if (bg === 'turing' && turingArt){
         gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, turingArt.tex()); gl.uniform1i(u.uLines, 0);
@@ -15575,6 +16769,7 @@ void main(){
 
     var a = trackStep();
     bands.bass = env(bands.bass, a.bass); bands.mid = env(bands.mid, a.mid); bands.high = env(bands.high, a.high);
+    adapt.step(dt);
 
     // drop detector: bass back after 1.8 s of quiet
     if (bands.bass < 0.12) quiet += dt;
@@ -15622,7 +16817,7 @@ void main(){
     // the cube lattice stays square; only the fractal tunnel drifts
     gl.uniform1f(u.uRoll, bg === 'fire' || bg === 'fireSpec' || bg === 'village' || bg === 'ocean' || bg === 'vocean' || bg === 'gwave' || bg === 'dish' || bg === 'vcanvas' || bg === 'darkcity' || bg === 'radio' ? (fx.symmetry ? spinAngle + rollOffset : 0)   // the flame always rises upright
       : bg === 'tree' || bg === 'tentacle' ? spinAngle + (fx.symmetry ? rollOffset : 0)
-      : bg === 'vliq' || bg === 'vriver' ? spinAngle                                   // Viscous Liquid stays upright through drops (your picture, the pins' horizon); only a chosen spin turns it
+      : bg === 'vliq' || bg === 'vriver' || bg === 'pinf' || bg === 'ridge' || bg === 'shz' || bg === 'sand' || bg === 'mypic' ? spinAngle                                   // Viscous Liquid stays upright through drops (your picture, the pins' horizon); only a chosen spin turns it
       : bg === 'hyper' || bg === 'deep' || bg === 'lines' || bg === 'julia' || bg === 'perlin' || bg === 'manifold' || bg === 'matrix' || bg === 'vortex' || bg === 'strata' || bg === 'eflow' || bg === 'noxfire' || bg === 'msphere' || bg === 'amberc' || bg === 'vdisp' || bg === 'kscope' || bg === 'teleid' || bg === 'sakura' || bg === 'cosmic' || bg === 'starb' || bg === 'snova' || bg === 'iloop' || bg === 'sea' || bg === 'holo' || bg === 'tend' || bg === 'goo' || bg === 'hcube' || bg === 'mobius' || !!SVG_LOOPS[bg] || bg === 'wave' || bg === 'sphere' || bg === 'disc' || bg === 'ifs' || bg === 'pistil' || bg === 'bulb' || bg === 'neon' || bg === 'thing' || bg === 'milk' || bg === 'mandala' || bg === 'liquid' || bg === 'turing' || bg === 'spiral' ? spinAngle + rollOffset
       : drift + spinAngle + rollOffset);
     gl.uniform1f(u.uHue, hue);
@@ -15725,6 +16920,17 @@ void main(){
 
   syncBg();
   resize();
+
+  if (window.TRIP_EMBED){                                             // follow the Dashboard's Player
+    var cta = document.getElementById('idleCta');
+    if (cta){ cta.textContent = 'Press play on the Player'; cta.removeAttribute('for'); }
+    var wasPlaying = null;
+    setInterval(function(){
+      if (!host) attachHost();
+      var now = hostPlaying();
+      if (now !== wasPlaying){ wasPlaying = now; onPlayState(); }
+    }, 250);
+  }
 
   var fsBtn = document.getElementById('fsBtn');
   if (stage.requestFullscreen){
