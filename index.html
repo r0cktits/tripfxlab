@@ -15435,7 +15435,13 @@ void main(){
       sandArt = (function(){
         var ready = false, failed = false, kp, target = null, tw = 0, th = 0, last = 0, startT = 0;
         var NC = 240, NR = 150, TOP = 0.86, MAXP = 5000;
-        var Hh = new Float32Array(NC), cells = new Uint8Array(NC * NR * 4), cellTex = null, drain = 0;
+        var Hh = new Float32Array(NC), cells = new Uint8Array(NC * NR * 4), cellTex = null, drain = 0, sinkA = new Float32Array(NC);
+        /* one row of sand out through the bottom of a column: everything above the jar's plain base (rows 0-3) moves
+           down a row, so even the lowest coloured layer always flows away */
+        function shiftDown(i){
+          for (var j = 4; j < NR - 1; j++){ var k = (j * NC + i) * 4, k2 = k + NC * 4; cells[k] = cells[k2]; cells[k + 1] = cells[k2 + 1]; cells[k + 2] = cells[k2 + 2]; }
+          Hh[i] = Math.max(4, Hh[i] - 1);
+        }
         var px = new Float32Array(MAXP), py = new Float32Array(MAXP), pvx = new Float32Array(MAXP), pvy = new Float32Array(MAXP), pc = new Float32Array(MAXP * 3), pOn = new Uint8Array(MAXP), pN = 0;
         var pBuf = null, pData = new Float32Array(MAXP * 5), ptProg = null, pu = {}, glBuf = null;
         var tt = 0, bass = 0, high = 0, kick = 0, prevB = 0, flash = 0, hue = Math.random(), layerT = 0;
@@ -15467,9 +15473,9 @@ void main(){
         }
         /* blow grains off a column's top into the air */
         function blow(i, n, power){
-          for (var q = 0; q < n && Hh[i] > 1.2; q++){
+          for (var q = 0; q < n && Hh[i] > 4.2; q++){
             var top = Math.max(0, Math.floor(Hh[i] - 0.01)), c = cellCol(i, top);
-            Hh[i] = Math.max(1, Hh[i] - 0.18);
+            Hh[i] = Math.max(4, Hh[i] - 0.18);
             spawn((i + Math.random()) / NC, Hh[i] / NR * TOP, (Math.random() - 0.5) * 0.5 * power, (0.4 + Math.random() * 0.9) * power, c);
           }
         }
@@ -15522,19 +15528,17 @@ void main(){
             if (d > 0){
               addSand(i, Math.min(d, (d * 5 + 6) * dt), sandCol(i));
               if (Math.random() < Math.min(1, d * dt * 6)) spawn((i + Math.random()) / NC, Math.min(1.02, (Hh[i] + d * 0.6 + 8) / NR * TOP), 0, -0.2, sandCol(i));   // a trickle of grains pouring in
-            } else Hh[i] = Math.max(1, Hh[i] + d * 2.2 * dt);       // sinking away, more slowly than it came
+            } else if (Hh[i] > 4){                                    // sinking away, more slowly than it came: out through the
+              sinkA[i] += -d * 2.2 * dt;                              // bottom, so old colours never get left behind down there
+              while (sinkA[i] >= 1 && Hh[i] > 4){ shiftDown(i); sinkA[i] -= 1; }
+            } else sinkA[i] = 0;
           }
           /* the sand drains slowly out through the bottom of the jar, so the layers flow down and fresh sand keeps
              pouring in on top (quicker when the music is busy) */
           drain += dt * (1.2 + bands.mid * 2.0);
           if (drain >= 1){
             drain -= 1;
-            for (var i5 = 0; i5 < NC; i5++){
-              if (Hh[i5] < 5) continue;
-              cells.copyWithin((4 * NC + i5) * 4, (5 * NC + i5) * 4, (5 * NC + i5) * 4 + 4);   // (keep the floor's base sand)
-              for (var j5 = 4; j5 < NR - 1; j5++){ var k5 = (j5 * NC + i5) * 4, k6 = k5 + NC * 4; cells[k5] = cells[k6]; cells[k5 + 1] = cells[k6 + 1]; cells[k5 + 2] = cells[k6 + 2]; }
-              Hh[i5] -= 1;
-            }
+            for (var i5 = 0; i5 < NC; i5++) if (Hh[i5] > 4) shiftDown(i5);
           }
           /* the slopes slide to the angle of repose */
           for (var pass = 0; pass < 2; pass++){
